@@ -113,6 +113,11 @@ def main(argv: list[str] | None = None) -> None:
     ap.add_argument("--only", nargs="*", help="zip name prefixes, e.g. Greetings (quick test)")
     args = ap.parse_args(argv)
 
+    # MediaPipe's C++ core prints a harmless "inference_feedback_manager ... Feedback manager
+    # requires a model with a single signature" warning for every video, which buries the
+    # progress bars. Raising the log level here (inherited by the worker processes) hides it.
+    os.environ.setdefault("GLOG_minloglevel", "2")
+    os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "3")
     args.work.mkdir(parents=True, exist_ok=True)
     dl.ZIPS = args.work / "zips"  # zips go to the fast local disk, never to Drive
     dl.ZIPS.mkdir(parents=True, exist_ok=True)
