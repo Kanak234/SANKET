@@ -22,7 +22,7 @@ def selftest() -> int:
     from sanket.core.grammar import glosses_to_sentence, text_to_glosses
     from sanket.core.lexicon import default_lexicon
     from sanket.core.normalize import FEATURES, N_POINTS, SEQ_LEN, model_input
-    from sanket.core.recognizer import Recognizer
+    from sanket.core.recognizer import IslRecognizer, load_recognizer
     from sanket.core.segmenter import Segmenter
     from sanket.core.signs import SignDictionary, SignPlayer
     from sanket.core.stt import SpeechToText
@@ -44,9 +44,29 @@ def selftest() -> int:
         lex = default_lexicon()
         check("lexicon: 263 signs", len(lex) == 263, f"{len(lex)} entries")
 
-        rec = Recognizer()
-        check("recognizer model", not rec.demo_mode, "DEMO mode — models/recognizer.onnx missing"
-              if rec.demo_mode else f"threshold {rec.threshold:.2f}")
+        rec = load_recognizer()
+        is_isl = isinstance(rec, IslRecognizer)
+        check("recognizer model", not rec.demo_mode, "DEMO mode — no model in models/isl or models/"
+              if rec.demo_mode else f"{'ISL pose model' if is_isl else 'Holistic model'}, threshold {rec.threshold:.2f}")
+        if is_isl and not rec.demo_mode:
+            from sanket.core.pose75 import Segmenter75
+
+            # Synthetic 75-point signer (pixel units): shoulders at y=300, right hand raised and moving.
+            seg75, found = Segmenter75(), []
+            for t in range(70):
+                f = np.zeros((75, 3), np.float32)
+                f[11, :2], f[12, :2] = (380, 300), (260, 300)
+                f[15, :2], f[16, :2] = (390, 520), (250, 520)
+                if 5 <= t < 45:
+                    f[16, :2] = (250 + 20 * np.sin(t / 3), 330)
+                    f[54:75, :2] = f[16, :2] + np.random.default_rng(t).normal(0, 3, (21, 2))
+                out = seg75.push(f)
+                if out is not None:
+                    found.append(out)
+            check("pose segmenter finds the sign", len(found) == 1, f"{len(found)} segment(s)")
+            if found:
+                p75 = rec.predict(found[0])
+                check("ISL model runs", 0.0 <= p75.prob <= 1.0, f"top: {p75.gloss} {p75.prob:.2f}")
 
         # Synthetic sign: a hand rising, waving, then dropping — must produce one segment.
         seg = Segmenter()
@@ -66,17 +86,18 @@ def selftest() -> int:
         if segments:
             x = model_input(segments[0])
             check("features shape", x.shape == (SEQ_LEN, FEATURES) and np.isfinite(x).all(), str(x.shape))
-            pred = rec.predict(segments[0])
-            check("recognizer runs", 0.0 <= pred.prob <= 1.0, f"top: {pred.gloss} {pred.prob:.2f}")
+            if not is_isl:
+                pred = rec.predict(segments[0])
+                check("recognizer runs", 0.0 <= pred.prob <= 1.0, f"top: {pred.gloss} {pred.prob:.2f}")
 
         s = glosses_to_sentence(["i", "happy"])
         check("signs → sentence", s.hi == "मैं ख़ुश हूँ" and s.en == "I am happy.", f"{s.hi} / {s.en}")
         g = text_to_glosses("मैं कल बाज़ार गया था")
         check("speech text → signs", g[:3] == ["i", "yesterday", "market"], " ".join(g))
 
-        signs = SignDictionary()
-        check("avatar sign dictionary", len(signs.motions) > 0, f"{len(signs.motions)} signs"
-              if signs.motions else "models/signs.npz missing — avatar shows captions only")
+        signs = SignDictionary()  # optional in v1: without it the avatar shows captions only
+        print(f"  [info] avatar sign dictionary: {len(signs.motions)} signs"
+              + ("" if signs.motions else " (models/signs.npz missing - captions only)"))
         frames = SignPlayer(signs).timeline(["hello", "TEXT:राम"])
         check("avatar timeline", len(frames) > 0, f"{len(frames)} frames")
 
@@ -85,7 +106,11 @@ def selftest() -> int:
         if stt.available:
             check("speech-to-text runs offline", stt.transcribe_pcm(b"\x00\x00" * 16000) == "", "1 s silence")
 
-        check("MediaPipe model", resource("models", "mediapipe", "holistic_landmarker.task").exists())
+        if is_isl:
+            for task in ("pose_landmarker_full.task", "hand_landmarker.task"):
+                check(f"MediaPipe {task}", resource("models", "isl", task).exists())
+        else:
+            check("MediaPipe model", resource("models", "mediapipe", "holistic_landmarker.task").exists())
     finally:
         socket.socket = real_socket  # type: ignore[assignment]
 

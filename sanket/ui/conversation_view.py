@@ -34,7 +34,7 @@ from PySide6.QtWidgets import (
 
 from sanket.core.grammar import glosses_to_sentence, is_text_token
 from sanket.core.lexicon import default_lexicon
-from sanket.core.recognizer import Prediction, Recognizer
+from sanket.core.recognizer import IslRecognizer, Prediction, Recognizer
 from sanket.core.signs import SignDictionary, SignPlayer
 from sanket.core.stt import SpeechToText
 from sanket.core.tts import Speaker
@@ -75,12 +75,11 @@ class CameraView(QWidget):
         pm = QPixmap.fromImage(self._img).scaled(self.size(), Qt.KeepAspectRatio, Qt.SmoothTransformation)
         x0, y0 = (self.width() - pm.width()) / 2, (self.height() - pm.height()) / 2
         qp.drawPixmap(int(x0), int(y0), pm)
-        if self._pts is not None:  # overlay: undo the W/H scaling from landmarks.py, then mirror
-            aspect = self._img.width() / max(1, self._img.height())
+        if self._pts is not None:  # overlay: hand points in 0-1 image units; mirror x like the preview
             qp.setPen(QPen(self.accent.lighter(150), 4))
-            for p in self._pts[:42]:
+            for p in self._pts:
                 if np.isfinite(p[0]):
-                    qp.drawPoint(QPointF(x0 + (1 - p[0] / aspect) * pm.width(), y0 + p[1] * pm.height()))
+                    qp.drawPoint(QPointF(x0 + (1 - p[0]) * pm.width(), y0 + p[1] * pm.height()))
         if self.signing:  # red dot = "I am reading your sign now"
             qp.setBrush(QColor("#D32F2F"))
             qp.setPen(Qt.NoPen)
@@ -131,7 +130,7 @@ class ChipRow(QScrollArea):
 
 
 class ConversationView(QWidget):
-    def __init__(self, settings: Settings, recognizer: Recognizer, signs: SignDictionary) -> None:
+    def __init__(self, settings: Settings, recognizer: Recognizer | IslRecognizer, signs: SignDictionary) -> None:
         super().__init__()
         self.setObjectName("root")
         self.settings = settings

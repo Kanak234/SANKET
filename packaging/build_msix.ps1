@@ -14,21 +14,22 @@ param([switch]$AllowDemo)
 $ErrorActionPreference = "Stop"
 Set-Location (Split-Path -Parent $PSScriptRoot)
 
-foreach ($f in @("models\recognizer.onnx", "models\signs.npz")) {
+uv run python scripts/fetch_models.py
+if ($LASTEXITCODE -ne 0) { throw "fetching models failed" }
+foreach ($f in @("models\isl\sanket_include.onnx", "models\isl\config.json")) {
     if (-not (Test-Path $f)) {
         if ($AllowDemo) { Write-Warning "$f missing - building a DEMO package (do NOT submit to the Store)" }
-        else { throw "$f missing. Run scripts\run_full_pipeline.ps1 first (or pass -AllowDemo for a test build)." }
+        else { throw "$f missing. Put the ISL model in experiments\include_pose_baseline\model or log in to Hugging Face (hf auth login), then re-run." }
     }
 }
 $idFile = "packaging\store_identity.json"
 if (-not (Test-Path $idFile)) { throw "$idFile missing - copy the values from Partner Center -> Product identity." }
 $id = Get-Content $idFile -Raw | ConvertFrom-Json
 
-uv run python scripts/fetch_models.py
-if ($LASTEXITCODE -ne 0) { throw "fetching MediaPipe/Vosk models failed" }
 uv run --with pyinstaller pyinstaller packaging/sanket.spec --noconfirm --distpath dist --workpath build
 if ($LASTEXITCODE -ne 0) { throw "PyInstaller failed" }
-& dist\SANKET\SANKET.exe --selftest | Out-Host
+$p = Start-Process dist\SANKET\SANKET.exe -ArgumentList "--selftest" -Wait -PassThru -NoNewWindow
+Write-Host "self-test exit code: $($p.ExitCode) (0 = all checks passed)"
 
 $stage = "build\msix"
 if (Test-Path $stage) { Remove-Item $stage -Recurse -Force }

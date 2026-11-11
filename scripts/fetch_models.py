@@ -23,7 +23,11 @@ MODELS = REPO / "models"
 THIRD = REPO / "third_party"
 sys.path.insert(0, str(REPO))
 
-from sanket.core.landmarks import HOLISTIC_URL  # noqa: E402  (after sys.path tweak)
+from sanket.core.landmarks import HAND_URL, HOLISTIC_URL, POSE_URL  # noqa: E402  (after sys.path tweak)
+
+ISL = MODELS / "isl"  # the shipped recognizer: sanket_include.onnx + config.json + 2 MediaPipe tasks
+EXPERIMENT_MODEL = REPO / "experiments" / "include_pose_baseline" / "model"
+HF_REPO = "KANAKq/sanket-isl-include"
 
 VOSK = {
     "hi": "https://alphacephei.com/vosk/models/vosk-model-small-hi-0.22.zip",
@@ -74,6 +78,37 @@ def fetch_vosk(lang: str, url: str) -> None:
     print(f"saved {dest} (licence files → {notice_dir})")
 
 
+def fetch_isl() -> None:
+    """Put the shipped ISL model into models/isl/.
+
+    Order: already there → copy from the experiment folder (Kanak's PC) → download from Hugging Face
+    (private repo: needs `hf auth login` once). The two MediaPipe tasks come from Google.
+    """
+    ISL.mkdir(parents=True, exist_ok=True)
+    for name, url in (("pose_landmarker_full.task", POSE_URL), ("hand_landmarker.task", HAND_URL)):
+        dest = ISL / name
+        if dest.exists():
+            print(f"ok   {dest}")
+        elif (EXPERIMENT_MODEL / name).exists():
+            shutil.copy(EXPERIMENT_MODEL / name, dest)
+            print(f"copied {dest}")
+        else:
+            dest.write_bytes(get(url))
+            print(f"saved {dest}")
+    for name in ("sanket_include.onnx", "config.json"):
+        dest = ISL / name
+        if dest.exists():
+            print(f"ok   {dest}")
+        elif (EXPERIMENT_MODEL / name).exists():
+            shutil.copy(EXPERIMENT_MODEL / name, dest)
+            print(f"copied {dest}")
+        else:
+            from huggingface_hub import hf_hub_download
+
+            shutil.copy(hf_hub_download(HF_REPO, name), dest)
+            print(f"downloaded {dest} from {HF_REPO}")
+
+
 def main() -> None:
     import argparse
 
@@ -83,6 +118,7 @@ def main() -> None:
     args = ap.parse_args()
     fetch_holistic()
     if not args.mediapipe_only:
+        fetch_isl()
         for lang, url in VOSK.items():
             fetch_vosk(lang, url)
     print("all requested models present")

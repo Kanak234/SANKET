@@ -98,3 +98,78 @@ class Recognizer:
         top = [(self.lexicon.labels[i], float(probs[i])) for i in order]
         best, p = top[0]
         return Prediction(gloss=best, prob=p, top=top, accepted=p >= self.threshold)
+
+
+# ---------------------------------------------------------------------------------------------
+# The SHIPPED recognizer: own BiGRU model (2.14 M params, random init, trained from scratch on
+# INCLUDE pose keypoints, test top-1 93.8 %). Files in models/isl/: sanket_include.onnx + config.json.
+# ---------------------------------------------------------------------------------------------
+ISL_DIR = resource("models", "isl")
+ISL_THRESHOLD = 0.45  # same default the experiment's live demo was tuned with
+
+
+def _gloss_key(name: str) -> str:
+    """'big large' → 'biglarge', 'ex. monsoon' → 'exmonsoon' — the lexicon's gloss keys."""
+    return "".join(ch for ch in name.lower() if "a" <= ch <= "z")
+
+
+class IslRecognizer:
+    """Same interface as Recognizer (predict(segment) → Prediction, demo_mode, threshold),
+    but takes a list of (75, 3) pose frames from pose75.Segmenter75.
+
+    WHY a separate class: different input layout (64, 136) and its own class list (262 words —
+    INCLUDE's 'second (number)' is not in this model). config.json is checked against the code's
+    layout so a mismatched model file fails loudly instead of answering wrongly.
+    """
+
+    def __init__(self, model_dir: Path | str = ISL_DIR, lexicon: Lexicon | None = None,
+                 threshold: float | None = None) -> None:
+        from sanket.core.pose75 import D_IN, KEEP
+
+        self.lexicon = lexicon or default_lexicon()
+        self.threshold = ISL_THRESHOLD if threshold is None else threshold
+        model_dir = Path(model_dir)
+        onnx = sorted(model_dir.glob("sanket_*.onnx")) if model_dir.exists() else []
+        cfg_path = model_dir / "config.json"
+        self.demo_mode = not (onnx and cfg_path.exists())
+        if self.demo_mode:
+            log.warning("ISL model not found in %s — DEMO mode (no recognition)", model_dir)
+            self._session, self.classes, self.T = None, list(self.lexicon.labels), 64
+            return
+        cfg = json.loads(cfg_path.read_text(encoding="utf-8"))
+        if cfg.get("d_in", D_IN) != D_IN or list(cfg.get("keep", KEEP)) != KEEP:
+            raise ValueError("models/isl/config.json does not match the code's feature layout")
+        self.T = int(cfg["T"])
+        self.test_top1 = cfg.get("test_top1")
+        # Map model class names to lexicon glosses (needed for Hindi/English text and the avatar).
+        self.classes = [_gloss_key(c) for c in cfg["classes"]]
+        unknown = [c for c in self.classes if self.lexicon.get(c) is None]
+        if unknown:
+            raise ValueError(f"model classes missing from lexicon.json: {unknown[:5]}")
+        import onnxruntime as ort
+
+        opts = ort.SessionOptions()
+        opts.intra_op_num_threads = 2  # leave CPU for MediaPipe and the UI
+        self._session = ort.InferenceSession(str(onnx[0]), opts, providers=["CPUExecutionProvider"])
+        self._input = self._session.get_inputs()[0].name
+
+    def predict(self, frames75, k: int = 3) -> Prediction:
+        """Segment (list of (75, 3) frames) → Prediction. Demo mode is never confident."""
+        from sanket.core.pose75 import build_input
+
+        if self._session is None:
+            g = self.classes[0]
+            return Prediction(gloss=g, prob=0.0, top=[(g, 0.0)], accepted=False)
+        logits = self._session.run(None, {self._input: build_input(frames75, self.T)})[0]
+        probs = softmax(logits)[0]
+        order = np.argsort(-probs)[:k]
+        top = [(self.classes[i], float(probs[i])) for i in order]
+        best, p = top[0]
+        return Prediction(gloss=best, prob=p, top=top, accepted=p >= self.threshold)
+
+
+def load_recognizer(threshold: float | None = None):
+    """The app's recognizer: the shipped ISL pose model if present, else the Holistic one (or demo)."""
+    if (ISL_DIR / "config.json").exists():
+        return IslRecognizer(threshold=threshold)
+    return Recognizer(threshold=threshold)

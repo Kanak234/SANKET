@@ -22,7 +22,7 @@ from PySide6.QtCore import QObject, QRunnable, QThread, Signal
 from PySide6.QtGui import QImage
 
 from sanket.core.grammar import text_to_glosses
-from sanket.core.recognizer import Recognizer
+from sanket.core.recognizer import IslRecognizer, Recognizer
 from sanket.core.segmenter import Segmenter
 from sanket.core.stt import SpeechToText
 
@@ -30,7 +30,7 @@ log = logging.getLogger(__name__)
 
 
 class CameraWorker(QThread):
-    frameReady = Signal(QImage, object)  # mirrored preview image, (79,3) points of that frame
+    frameReady = Signal(QImage, object)  # mirrored preview image, (42,2) hand overlay points (0-1, NaN=missing)
     signingChanged = Signal(bool)  # True while a sign is being collected
     predicted = Signal(object)  # Prediction
     segmentReady = Signal(object)  # raw (T,79,3) segment (ContributeView saves these)
@@ -38,7 +38,7 @@ class CameraWorker(QThread):
     hint = Signal(str)  # "low_light" etc.
     failed = Signal(str)  # camera could not be opened
 
-    def __init__(self, recognizer: Recognizer, camera_index: int = 0, recognize: bool = True) -> None:
+    def __init__(self, recognizer: Recognizer | IslRecognizer, camera_index: int = 0, recognize: bool = True) -> None:
         super().__init__()
         self.recognizer = recognizer
         self.camera_index = camera_index
@@ -58,8 +58,12 @@ class CameraWorker(QThread):
     def run(self) -> None:
         import cv2
 
-        from sanket.core.landmarks import HolisticExtractor
+        # Pick the landmark pipeline that matches the loaded model:
+        #   IslRecognizer (shipped 93.8% model) → MediaPipe Pose + Hand, 75 points, Segmenter75
+        #   Recognizer (Holistic training pipeline) → MediaPipe Holistic, 79 points, Segmenter
+        from sanket.core.recognizer import IslRecognizer
 
+        pose_mode = isinstance(self.recognizer, IslRecognizer)
         cap = cv2.VideoCapture(self.camera_index, cv2.CAP_DSHOW if hasattr(cv2, "CAP_DSHOW") else 0)
         if not cap.isOpened():
             self.failed.emit("no_camera")
@@ -67,7 +71,16 @@ class CameraWorker(QThread):
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
         try:
-            extractor = HolisticExtractor()
+            if pose_mode:
+                from sanket.core.landmarks import PoseHandExtractor
+                from sanket.core.pose75 import Segmenter75
+
+                extractor = PoseHandExtractor()
+                self.segmenter = Segmenter75()
+            else:
+                from sanket.core.landmarks import HolisticExtractor
+
+                extractor = HolisticExtractor()
         except FileNotFoundError as exc:
             self.failed.emit(str(exc))
             cap.release()
@@ -83,20 +96,32 @@ class CameraWorker(QThread):
                 self.failed.emit("no_camera")
                 break
             rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
+            h, w = rgb.shape[:2]
             ts = int((time.monotonic() - t0) * 1000)
             a = time.perf_counter()
             pts = extractor.process(rgb, ts)  # UN-mirrored frame → correct left/right hands
             mp_ms = (time.perf_counter() - a) * 1000
 
+            # Overlay points (42 hand points, 0-1 image units, NaN = missing) — same format for both
+            # pipelines, so CameraView does not need to know which model is running.
+            if pose_mode:
+                from sanket.core.pose75 import overlay_points
+
+                overlay = overlay_points(pts, w, h)
+                person = bool(np.abs(pts[:33, :2]).sum() > 0)
+                hands = bool(np.isfinite(overlay[:, 0]).any())
+            else:
+                overlay = pts[:42, :2].copy()
+                overlay[:, 0] /= w / float(h)  # undo landmarks.py's W/H scaling
+                person = bool(np.isfinite(pts[42:59, 0]).any())
+                hands = bool(np.isfinite(pts[:42, 0]).any())
+
             # Preview: mirrored like a selfie camera, so the signer sees a natural reflection.
             view = np.ascontiguousarray(rgb[:, ::-1])
-            h, w = view.shape[:2]
             img = QImage(view.data, w, h, 3 * w, QImage.Format_RGB888).copy()
-            self.frameReady.emit(img, pts)
+            self.frameReady.emit(img, overlay)
 
-            # Low-light hint: person visible but no hand found for 3 s.
-            person = np.isfinite(pts[42:59, 0]).any()
-            hands = np.isfinite(pts[:42, 0]).any()
+            # Low-light hint: person visible but no hand found for 3 s in a dark frame.
             if person and not hands and float(rgb.mean()) < 60:
                 no_hand_since = no_hand_since or time.monotonic()
                 if time.monotonic() - no_hand_since > 3:
@@ -114,7 +139,7 @@ class CameraWorker(QThread):
                 self.signingChanged.emit(was_signing)
             rec_ms = 0.0
             if seg is not None:
-                self.segmentReady.emit(seg)
+                self.segmentReady.emit(np.stack(seg) if isinstance(seg, list) else seg)
                 if self.recognize:
                     b = time.perf_counter()
                     self.predicted.emit(self.recognizer.predict(seg))

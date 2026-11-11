@@ -27,7 +27,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from sanket.core.recognizer import Recognizer
+from sanket.core.recognizer import load_recognizer
 from sanket.core.signs import SignDictionary, SignPlayer
 from sanket.paths import resource
 from sanket.ui.conversation_view import ConversationView
@@ -62,7 +62,7 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("SANKET — ISL ⇄ Speech (Preview)")
         self.resize(1360, 820)
         self.settings = Settings.load()
-        self.recognizer = Recognizer(threshold=self.settings.threshold)
+        self.recognizer = load_recognizer(threshold=self.settings.threshold)
         self.signs = SignDictionary()
         self.player = SignPlayer(self.signs)
 
@@ -146,7 +146,8 @@ class MainWindow(QMainWindow):
 
     def _settings_changed(self) -> None:
         self._apply_theme()
-        self.recognizer.threshold = self.settings.threshold or self.recognizer._load_threshold()
+        if self.settings.threshold is not None:
+            self.recognizer.threshold = self.settings.threshold
         self.conversation.stt.language = self.settings.stt_language
         self.conversation.start_camera()  # camera index may have changed
 

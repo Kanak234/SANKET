@@ -9,7 +9,7 @@ No internet. No account. Nothing leaves the device.</p>
 <img alt="Windows" src="https://img.shields.io/badge/platform-Windows%2010%2F11-0F6E6E">
 <img alt="Offline" src="https://img.shields.io/badge/works-100%25%20offline-0F6E6E">
 <img alt="Status" src="https://img.shields.io/badge/status-v1%20preview-B45309">
-<img alt="Tests" src="https://img.shields.io/badge/tests-102%20passing-1E6B3A">
+<img alt="Tests" src="https://img.shields.io/badge/tests-110%20passing-1E6B3A">
 </p>
 
 ![SANKET conversation screen](docs/images/conversation.png)

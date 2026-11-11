@@ -11,3 +11,4 @@ models/vosk/
 third_party/
 .pytest_cache/
 .ruff_cache/
+models/isl/
