@@ -56,4 +56,4 @@ Signs recorded by Deaf students of **St. Louis School for the Deaf, Adyar, Chenn
 Deaf signers, ISL teachers and developers are welcome — especially to verify signs and record regional variants. Contributions are accepted only under the [contributor agreement](docs/DATA_AND_LICENSES.md#contributor-agreement-for-friends--community-contributors).
 
 ## Licence
-Copyright © 2026 Kanak Prabhakar. **All rights reserved.** Viewing this repository grants no rights to use, copy or modify it. See [`LICENSE`](LICENSE).
+**MIT** — free to use, modify and share; keep the copyright notice. Copyright © 2026 Kanak Prabhakar. The KP logo is excluded (all rights reserved). See [`LICENSE`](LICENSE).

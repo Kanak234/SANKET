@@ -13,7 +13,7 @@
 | Noto Sans, Noto Sans Devanagari | Google | SIL OFL 1.1 | Bundled fonts | ✅ |
 | PyTorch | Meta | BSD-3 | Training only (not shipped) | ✅ |
 | KP orbit logo | Kanak Prabhakar | Own (all rights reserved) | Watermark | ✅ |
-| **SANKET code, recognizer model, lexicon.json, signs.npz, UI, docs** | Kanak Prabhakar | **Proprietary — all rights reserved** | The product | ✅ |
+| **SANKET code, recognizer model, lexicon.json, signs.npz, UI, docs** | Kanak Prabhakar | **MIT** (open source) | The product | ✅ |
 
 ## Download (Windows, no bash)
 `training/download_include.py` reads the file list + md5 from the Zenodo record, downloads each zip to `D:\datasets\INCLUDE\zips` with HTTP Range resume, verifies md5, extracts to `D:\datasets\INCLUDE\videos`, and skips anything already verified. Train/val/test split lists and the label map come from AI4Bharat's INCLUDE GitHub repo (MIT) and are already in `training/splits/` — no manual download.
@@ -24,18 +24,9 @@
 - Contribute mode: landmarks `.npz` + consent record saved locally in `%LOCALAPPDATA%\SANKET\contrib\`; the user shares it manually.
 - Privacy policy (required by Microsoft Store) = `docs/PRIVACY.md`, published on kanakprabhakar.online/sanket/privacy.
 
-## SANKET's own licence (proprietary)
-```
-Copyright (c) 2026 Kanak Prabhakar. All rights reserved.
+## SANKET's own licence (MIT)
 
-SANKET (source code, trained models, lexicon, sign dictionary data files, user interface,
-artwork and documentation) is proprietary. No licence is granted to copy, modify, distribute,
-sublicense, train on, or create derivative works from any part of it without prior written
-permission from Kanak Prabhakar. Viewing the public repository does not grant any rights.
-
-Third-party components bundled with SANKET remain under their own licences, listed in
-THIRD_PARTY_NOTICES.md. Those licences apply only to those components, not to SANKET's own work.
-```
+Since 2026-11-12 SANKET's code, model, lexicon and docs are released under the MIT licence (see `LICENSE`). Kanak chose open source so researchers, deaf organisations and students can use and improve it. Exception: the KP orbit logo stays all rights reserved. Third-party components keep their own licences.
 
 ## Why third-party licences stay as they are
 MediaPipe and Vosk are Apache 2.0, Qt is LGPLv3, INCLUDE is CC BY 4.0. SANKET cannot relicense them; it only uses them and must ship their notices. Their licences give nobody any right over SANKET's own code or model. Replacing them would mean building an own hand/pose landmark model and an own speech recogniser — possible later, not in v1.

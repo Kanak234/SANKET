@@ -14,8 +14,7 @@ These are the things the docs don't decide yet. Until Kanak decides each one, th
 - Before deciding, measure accuracy on a real webcam. That has not been tested yet.
 
 ## 3. Licence direction
-- `LICENSE` currently says "all rights reserved". Kanak has said he wants SANKET to be open source, but no licence has been chosen yet (and he has said not Apache 2.0).
-- Until he picks one, the existing proprietary LICENSE stays unchanged.
+- RESOLVED 2026-11-12: MIT (logo excluded).
 
 ## 4. Model hosting
 - The experiment model goes on Hugging Face (`KANAKq/sanket-isl-include`, created **private** by default) instead of Git LFS. Model files are gitignored.
