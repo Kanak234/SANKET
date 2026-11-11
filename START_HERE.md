@@ -14,11 +14,11 @@ Offline two-way ISL ⇄ speech translator. This kit holds the full spec + the bu
 | `OPENCODE_PROMPT.md` | The full build instruction Nemotron executes |
 
 ## Before running
-Put your `logo-mark.svg` into `assets\` (optional — a placeholder is used if missing).
+Put your `logo-mark.svg` into `assets\` after cloning (optional — a placeholder is used if missing).
 
-## One command (PowerShell, on the i9 desktop) — unzip kit + start the build
+## One command (PowerShell, on the i9 desktop) — clone the repo + start the build
 ```powershell
-New-Item -ItemType Directory -Force D:\Projects\sanket | Out-Null; Expand-Archive -Force "$HOME\Downloads\sanket-v1-kit.zip" D:\Projects\sanket; Set-Location D:\Projects\sanket; git init -q; git config user.name "Kanak Prabhakar"; git config user.email "kanakprabhakar72@gmail.com"; opencode run -m nvidia/nvidia/nemotron-3-ultra-550b-a55b "Read OPENCODE_PROMPT.md in this folder and execute every step in it fully, following AGENTS.md and docs/."
+git clone https://github.com/Kanak234/Sankat D:\Projects\sanket; Set-Location D:\Projects\sanket; git config user.name "Kanak Prabhakar"; git config user.email "kanakprabhakar72@gmail.com"; opencode run -m nvidia/nvidia/nemotron-3-ultra-550b-a55b "Read OPENCODE_PROMPT.md in this folder and execute every step in it fully, following AGENTS.md and docs/."
 ```
 
 ## After Nemotron finishes
