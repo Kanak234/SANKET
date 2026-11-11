@@ -1,0 +1,9 @@
+Copyright (c) 2026 Kanak Prabhakar. All rights reserved.
+
+SANKET (source code, trained models, lexicon, sign dictionary data files, user interface,
+artwork and documentation) is proprietary. No licence is granted to copy, modify, distribute,
+sublicense, train on, or create derivative works from any part of it without prior written
+permission from Kanak Prabhakar. Viewing the public repository does not grant any rights.
+
+Third-party components bundled with SANKET remain under their own licences, listed in
+THIRD_PARTY_NOTICES.md. Those licences apply only to those components, not to SANKET's own work.
