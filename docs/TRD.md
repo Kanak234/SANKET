@@ -30,7 +30,7 @@ The **runtime never imports PyTorch** — only `onnxruntime`, so the same `recog
 |---|---|---|
 | Language | **Python 3.12** (uv-managed venv) | PyTorch wheels exist for 3.12, not 3.14 |
 | UI | **PySide6** (Qt 6) | Kanak already ships PySide6 apps (MEDHĀ); native, fast QPainter for avatar |
-| Landmarks | **MediaPipe Tasks** — HandLandmarker, PoseLandmarker (lite), FaceLandmarker | Same models exist on Android |
+| Landmarks | **MediaPipe Tasks — HolisticLandmarker** (one model: pose + face + both hands), used frozen | Same model exists on Android; one tracker keeps hands, body and face in sync |
 | Training | **PyTorch 2.x + CUDA** on RTX 5060 Ti 16 GB | From-scratch model, no pretrained weights |
 | Inference | **onnxruntime** (CPU EP; DirectML EP optional) | Portable to Android (onnxruntime-mobile) |
 | STT | **Vosk** + `vosk-model-small-hi` (+ small English model) — used **as-is, no training** | Offline, ~50 MB, has Android SDK |
@@ -85,6 +85,7 @@ Per frame → array `(79, 3)` float32, missing points = 0 and a mask bit:
 - Hands: left 21 + right 21 = 42 (MediaPipe handedness, **no mirroring**)
 - Pose upper body: indices 0–16 = 17
 - Face: 20 points — eyebrows (10), outer lips (8), nose tip, chin
+- Aspect fix (in `landmarks.py`): x and z are multiplied by image W/H so 16:9 INCLUDE videos and 4:3 webcams give identical shapes.
 - Normalisation: origin = midpoint of shoulders (pose 11, 12); scale = shoulder distance; z scaled the same.
 - Extra per-frame features: hand-present flags (2). Final per-frame vector = 79×3 + 2 = **239**.
 - Sequence: resample (linear interpolation) to **T = 64** frames.
@@ -147,3 +148,6 @@ Both directions are unit-tested with ≥ 30 sentence pairs in `tests/test_gramma
 - 2026-11-11 — v1 vocabulary = INCLUDE 263 words; 2D avatar; Windows first, Android v2. (defaults taken by Claude; Kanak can change)
 - 2026-11-11 — Face lock & voice unlock dropped.
 - 2026-11-11 — Vosk + Windows TTS used as-is (no training) for speech parts.
+- 2026-11-11 — Built by Claude directly (Kanak's decision), not by an external agent. MediaPipe Holistic chosen over three separate landmarkers.
+- 2026-11-11 — Official AI4Bharat INCLUDE split lists + label map (MIT) vendored in `training/splits/`, so no manual Google-Drive download is needed.
+- 2026-11-11 — Partner Center name reserved: SANKET, Store ID 9NH6TTQJQTGJ, identity KanakPrabhakar.SANKET.

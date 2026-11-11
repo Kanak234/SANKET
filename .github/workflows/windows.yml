@@ -1,0 +1,35 @@
+# windows.yml — on every push: run all tests on Windows and build SANKET.exe.
+# WHY: the app ships for Windows, so tests must pass there too (SAPI voices, DirectShow camera
+#      backend, paths). The built folder is uploaded as an artifact Kanak can download and try.
+name: windows-build
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  test-and-build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Install Python 3.12 + deps
+        run: uv sync --extra dev
+      - name: Fetch frozen MediaPipe + Vosk models
+        run: uv run python scripts/fetch_models.py
+      - name: Lint
+        run: uv run ruff check .
+      - name: Tests (offscreen Qt)
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: uv run pytest -q
+      - name: Build SANKET.exe
+        run: uv run --with pyinstaller pyinstaller packaging/sanket.spec --noconfirm --distpath dist --workpath build
+      - name: Self-test of the built exe
+        shell: pwsh
+        run: |
+          $p = Start-Process dist\SANKET\SANKET.exe -ArgumentList "--selftest" -Wait -PassThru -NoNewWindow
+          Write-Host "self-test exit code $($p.ExitCode) (DEMO until trained models are committed)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SANKET-windows
+          path: dist/SANKET

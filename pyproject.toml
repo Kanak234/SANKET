@@ -1,0 +1,53 @@
+# pyproject.toml — single place that describes how SANKET is installed, tested and linted.
+# WHY: one file keeps runtime deps, training deps and dev tools separate, so the shipped app
+#      never pulls in PyTorch (training-only) and stays small.
+# NEXT: `uv sync` reads this; PyInstaller (packaging/sanket.spec) bundles only the runtime deps.
+
+[project]
+name = "sanket"
+version = "1.0.0"
+description = "SANKET — offline two-way Indian Sign Language <-> speech translator"
+authors = [{ name = "Kanak Prabhakar", email = "kanakprabhakar72@gmail.com" }]
+license = { file = "LICENSE" }
+requires-python = ">=3.12,<3.13"
+# Runtime dependencies: everything the Windows app needs, nothing more (no torch here).
+dependencies = [
+    "numpy>=1.26",
+    "onnxruntime>=1.18",
+    "mediapipe>=0.10.14",
+    "PySide6>=6.7",
+    "vosk>=0.3.45",
+    "pyttsx3>=2.90",
+    "sounddevice>=0.4.6",
+    "opencv-python-headless>=4.9",
+]
+
+[project.optional-dependencies]
+# Training-only tools — installed on Kanak's GPU desktop with `uv sync --extra train`.
+train = [
+    "torch>=2.4",
+    "onnx>=1.16",
+    "requests>=2.31",
+    "tqdm>=4.66",
+    "scikit-learn>=1.4",
+    "matplotlib>=3.8",
+    "scipy>=1.12",
+]
+# Developer tools for checks before every commit.
+dev = ["pytest>=8", "ruff>=0.5", "onnx>=1.16", "torch>=2.4", "scipy>=1.12"]
+
+[project.scripts]
+sanket = "sanket.__main__:main"
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+exclude = [".venv", "build", "dist"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

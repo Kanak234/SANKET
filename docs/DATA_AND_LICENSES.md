@@ -4,8 +4,9 @@
 |---|---|---|---|---|
 | INCLUDE ISL dataset (4,292 videos, 263 words, 15 categories, 56.8 GB) | AI4Bharat / IIT Madras — Zenodo record 4010759 | **CC BY 4.0** (verified on Zenodo 2026-11-11) | Train recognizer; medoid clips → avatar sign dictionary. Videos are never shipped — only derived landmarks | ✅ Allowed with credit |
 | Credit line (mandatory) | — | — | "Signs recorded by Deaf students of St. Louis School for the Deaf, Adyar, Chennai. INCLUDE dataset — Sridhar, Ganesan, Kumar, Khapra (ACM MM 2020), AI4Bharat/IIT Madras, CC BY 4.0." | Show in About, Dictionary, README |
-| MediaPipe Tasks models (hand, pose lite, face) | Google | Apache 2.0 | Frozen landmark extraction | ✅ |
-| Vosk + small Hindi / English models | Alpha Cephei | Toolkit Apache 2.0; **model licence must be read from each model's README before bundling** | Frozen offline STT | ⚠️ Agent must verify and record here |
+| MediaPipe Holistic Landmarker model | Google | Apache 2.0 | Frozen landmark extraction | ✅ |
+| INCLUDE split lists + label map | AI4Bharat (GitHub) | MIT | Official train/val/test split | ✅ — `training/splits/LICENSE-AI4Bharat-INCLUDE-MIT.txt` |
+| Vosk + small Hindi / English models | Alpha Cephei | Toolkit Apache 2.0; each model's README/licence is copied to `third_party/` by `scripts/fetch_models.py` and must be checked before the first Store submission | Frozen offline STT | ⚠️ check once after first fetch |
 | onnxruntime | Microsoft | MIT | Inference | ✅ |
 | PySide6 / Qt 6 | Qt | LGPLv3 (dynamic linking via PyInstaller onedir is fine) | UI | ✅ — ship LGPL notice + Qt licence text |
 | pyttsx3 / Windows SAPI voices | — | MPL-2.0 / OS component | TTS | ✅ |
@@ -15,7 +16,7 @@
 | **SANKET code, recognizer model, lexicon.json, signs.npz, UI, docs** | Kanak Prabhakar | **Proprietary — all rights reserved** | The product | ✅ |
 
 ## Download (Windows, no bash)
-`training/download_include.py` reads the file list + md5 from the Zenodo record, downloads each zip to `D:\datasets\INCLUDE\zips` with HTTP Range resume, verifies md5, extracts to `D:\datasets\INCLUDE\videos`, and skips anything already verified. Train/test split CSVs: from the Google Drive link on the Zenodo page (Kanak downloads once manually and puts them in `D:\datasets\INCLUDE\splits\`).
+`training/download_include.py` reads the file list + md5 from the Zenodo record, downloads each zip to `D:\datasets\INCLUDE\zips` with HTTP Range resume, verifies md5, extracts to `D:\datasets\INCLUDE\videos`, and skips anything already verified. Train/val/test split lists and the label map come from AI4Bharat's INCLUDE GitHub repo (MIT) and are already in `training/splits/` — no manual download.
 
 ## User data
 - No account, no analytics, no network.

@@ -1,0 +1,2926 @@
+{
+ "version": 1,
+ "source": "INCLUDE (AI4Bharat/IIT Madras, CC BY 4.0) vocabulary; Hindi/English renderings by Kanak Prabhakar",
+ "entries": {
+  "actor": {
+   "index": 0,
+   "hi": "अभिनेता",
+   "en": "actor",
+   "pos": "noun",
+   "category": "Jobs",
+   "synonyms_hi": [
+    "एक्टर"
+   ],
+   "synonyms_en": []
+  },
+  "adult": {
+   "index": 1,
+   "hi": "वयस्क",
+   "en": "adult",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [
+    "बड़ा आदमी"
+   ],
+   "synonyms_en": [
+    "grown-up"
+   ]
+  },
+  "afternoon": {
+   "index": 2,
+   "hi": "दोपहर",
+   "en": "afternoon",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [],
+   "synonyms_en": [
+    "noon"
+   ]
+  },
+  "alive": {
+   "index": 3,
+   "hi": "जीवित",
+   "en": "alive",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "ज़िंदा",
+    "जिंदा"
+   ],
+   "synonyms_en": [
+    "living"
+   ]
+  },
+  "alright": {
+   "index": 4,
+   "hi": "ठीक है",
+   "en": "alright",
+   "pos": "greeting",
+   "category": "Greetings",
+   "synonyms_hi": [
+    "ठीक",
+    "सही"
+   ],
+   "synonyms_en": [
+    "ok",
+    "okay",
+    "fine"
+   ]
+  },
+  "animal": {
+   "index": 5,
+   "hi": "जानवर",
+   "en": "animal",
+   "pos": "noun",
+   "category": "Animals",
+   "synonyms_hi": [
+    "पशु"
+   ],
+   "synonyms_en": []
+  },
+  "artist": {
+   "index": 6,
+   "hi": "कलाकार",
+   "en": "artist",
+   "pos": "noun",
+   "category": "Jobs",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "attack": {
+   "index": 7,
+   "hi": "हमला",
+   "en": "attack",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [
+    "आक्रमण"
+   ],
+   "synonyms_en": []
+  },
+  "author": {
+   "index": 8,
+   "hi": "लेखक",
+   "en": "author",
+   "pos": "noun",
+   "category": "Jobs",
+   "synonyms_hi": [],
+   "synonyms_en": [
+    "writer"
+   ]
+  },
+  "baby": {
+   "index": 9,
+   "hi": "बच्चा",
+   "en": "baby",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [
+    "शिशु"
+   ],
+   "synonyms_en": []
+  },
+  "bad": {
+   "index": 10,
+   "hi": "बुरा",
+   "en": "bad",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "खराब",
+    "ख़राब",
+    "बेकार"
+   ],
+   "synonyms_en": []
+  },
+  "bag": {
+   "index": 11,
+   "hi": "थैला",
+   "en": "bag",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "बैग",
+    "झोला"
+   ],
+   "synonyms_en": []
+  },
+  "ball": {
+   "index": 12,
+   "hi": "गेंद",
+   "en": "ball",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [
+    "बॉल"
+   ],
+   "synonyms_en": []
+  },
+  "bank": {
+   "index": 13,
+   "hi": "बैंक",
+   "en": "bank",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "bathroom": {
+   "index": 14,
+   "hi": "बाथरूम",
+   "en": "bathroom",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "स्नानघर",
+    "शौचालय"
+   ],
+   "synonyms_en": [
+    "toilet"
+   ]
+  },
+  "beautiful": {
+   "index": 15,
+   "hi": "सुंदर",
+   "en": "beautiful",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "सुन्दर",
+    "ख़ूबसूरत",
+    "खूबसूरत"
+   ],
+   "synonyms_en": [
+    "pretty"
+   ]
+  },
+  "bed": {
+   "index": 16,
+   "hi": "बिस्तर",
+   "en": "bed",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "पलंग"
+   ],
+   "synonyms_en": []
+  },
+  "bedroom": {
+   "index": 17,
+   "hi": "सोने का कमरा",
+   "en": "bedroom",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "बेडरूम"
+   ],
+   "synonyms_en": []
+  },
+  "bicycle": {
+   "index": 18,
+   "hi": "साइकिल",
+   "en": "bicycle",
+   "pos": "noun",
+   "category": "Means of Transportation",
+   "synonyms_hi": [],
+   "synonyms_en": [
+    "cycle"
+   ]
+  },
+  "biglarge": {
+   "index": 19,
+   "hi": "बड़ा",
+   "en": "big",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "बड़ी",
+    "बड़े",
+    "विशाल"
+   ],
+   "synonyms_en": [
+    "large"
+   ]
+  },
+  "bill": {
+   "index": 20,
+   "hi": "बिल",
+   "en": "bill",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "bird": {
+   "index": 21,
+   "hi": "चिड़िया",
+   "en": "bird",
+   "pos": "noun",
+   "category": "Animals",
+   "synonyms_hi": [
+    "पक्षी"
+   ],
+   "synonyms_en": []
+  },
+  "black": {
+   "index": 22,
+   "hi": "काला",
+   "en": "black",
+   "pos": "adj",
+   "category": "Colours",
+   "synonyms_hi": [
+    "काली"
+   ],
+   "synonyms_en": []
+  },
+  "blind": {
+   "index": 23,
+   "hi": "अंधा",
+   "en": "blind",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "दृष्टिहीन"
+   ],
+   "synonyms_en": []
+  },
+  "blue": {
+   "index": 24,
+   "hi": "नीला",
+   "en": "blue",
+   "pos": "adj",
+   "category": "Colours",
+   "synonyms_hi": [
+    "नीली"
+   ],
+   "synonyms_en": []
+  },
+  "boat": {
+   "index": 25,
+   "hi": "नाव",
+   "en": "boat",
+   "pos": "noun",
+   "category": "Means of Transportation",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "book": {
+   "index": 26,
+   "hi": "किताब",
+   "en": "book",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "पुस्तक"
+   ],
+   "synonyms_en": []
+  },
+  "box": {
+   "index": 27,
+   "hi": "डिब्बा",
+   "en": "box",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "बक्सा"
+   ],
+   "synonyms_en": []
+  },
+  "boy": {
+   "index": 28,
+   "hi": "लड़का",
+   "en": "boy",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "brother": {
+   "index": 29,
+   "hi": "भाई",
+   "en": "brother",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [
+    "भैया"
+   ],
+   "synonyms_en": []
+  },
+  "brown": {
+   "index": 30,
+   "hi": "भूरा",
+   "en": "brown",
+   "pos": "adj",
+   "category": "Colours",
+   "synonyms_hi": [
+    "भूरी"
+   ],
+   "synonyms_en": []
+  },
+  "bus": {
+   "index": 31,
+   "hi": "बस",
+   "en": "bus",
+   "pos": "noun",
+   "category": "Means of Transportation",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "camera": {
+   "index": 32,
+   "hi": "कैमरा",
+   "en": "camera",
+   "pos": "noun",
+   "category": "Electronics",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "car": {
+   "index": 33,
+   "hi": "गाड़ी",
+   "en": "car",
+   "pos": "noun",
+   "category": "Means of Transportation",
+   "synonyms_hi": [
+    "कार",
+    "गाडी"
+   ],
+   "synonyms_en": []
+  },
+  "card": {
+   "index": 34,
+   "hi": "कार्ड",
+   "en": "card",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "cat": {
+   "index": 35,
+   "hi": "बिल्ली",
+   "en": "cat",
+   "pos": "noun",
+   "category": "Animals",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "cellphone": {
+   "index": 36,
+   "hi": "मोबाइल",
+   "en": "mobile phone",
+   "pos": "noun",
+   "category": "Electronics",
+   "synonyms_hi": [
+    "फ़ोन",
+    "फोन"
+   ],
+   "synonyms_en": [
+    "mobile",
+    "cellphone",
+    "phone"
+   ]
+  },
+  "chair": {
+   "index": 37,
+   "hi": "कुर्सी",
+   "en": "chair",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "cheap": {
+   "index": 38,
+   "hi": "सस्ता",
+   "en": "cheap",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "सस्ती"
+   ],
+   "synonyms_en": []
+  },
+  "child": {
+   "index": 39,
+   "hi": "बच्चा",
+   "en": "child",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [
+    "बालक"
+   ],
+   "synonyms_en": [
+    "kid"
+   ]
+  },
+  "city": {
+   "index": 40,
+   "hi": "शहर",
+   "en": "city",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [
+    "नगर"
+   ],
+   "synonyms_en": []
+  },
+  "clean": {
+   "index": 41,
+   "hi": "साफ़",
+   "en": "clean",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "साफ",
+    "स्वच्छ"
+   ],
+   "synonyms_en": []
+  },
+  "clock": {
+   "index": 42,
+   "hi": "घड़ी",
+   "en": "clock",
+   "pos": "noun",
+   "category": "Electronics",
+   "synonyms_hi": [],
+   "synonyms_en": [
+    "watch"
+   ]
+  },
+  "clothing": {
+   "index": 43,
+   "hi": "कपड़े",
+   "en": "clothes",
+   "pos": "noun",
+   "category": "Clothes",
+   "synonyms_hi": [
+    "कपड़ा"
+   ],
+   "synonyms_en": [
+    "clothing"
+   ]
+  },
+  "cold": {
+   "index": 44,
+   "hi": "ठंडा",
+   "en": "cold",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "ठंड",
+    "ठंडी"
+   ],
+   "synonyms_en": []
+  },
+  "colour": {
+   "index": 45,
+   "hi": "रंग",
+   "en": "colour",
+   "pos": "noun",
+   "category": "Colours",
+   "synonyms_hi": [],
+   "synonyms_en": [
+    "color"
+   ]
+  },
+  "computer": {
+   "index": 46,
+   "hi": "कंप्यूटर",
+   "en": "computer",
+   "pos": "noun",
+   "category": "Electronics",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "cool": {
+   "index": 47,
+   "hi": "ठंडक",
+   "en": "cool",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "court": {
+   "index": 48,
+   "hi": "अदालत",
+   "en": "court",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [
+    "कोर्ट"
+   ],
+   "synonyms_en": []
+  },
+  "cow": {
+   "index": 49,
+   "hi": "गाय",
+   "en": "cow",
+   "pos": "noun",
+   "category": "Animals",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "crowd": {
+   "index": 50,
+   "hi": "भीड़",
+   "en": "crowd",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "curved": {
+   "index": 51,
+   "hi": "मुड़ा हुआ",
+   "en": "curved",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "टेढ़ा"
+   ],
+   "synonyms_en": []
+  },
+  "daughter": {
+   "index": 52,
+   "hi": "बेटी",
+   "en": "daughter",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [
+    "पुत्री"
+   ],
+   "synonyms_en": []
+  },
+  "dead": {
+   "index": 53,
+   "hi": "मरा हुआ",
+   "en": "dead",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "मृत"
+   ],
+   "synonyms_en": []
+  },
+  "deaf": {
+   "index": 54,
+   "hi": "बहरा",
+   "en": "deaf",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "बधिर"
+   ],
+   "synonyms_en": []
+  },
+  "death": {
+   "index": 55,
+   "hi": "मृत्यु",
+   "en": "death",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [
+    "मौत"
+   ],
+   "synonyms_en": []
+  },
+  "deep": {
+   "index": 56,
+   "hi": "गहरा",
+   "en": "deep",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "गहरी"
+   ],
+   "synonyms_en": []
+  },
+  "dirty": {
+   "index": 57,
+   "hi": "गंदा",
+   "en": "dirty",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "गन्दा",
+    "गंदी"
+   ],
+   "synonyms_en": []
+  },
+  "doctor": {
+   "index": 58,
+   "hi": "डॉक्टर",
+   "en": "doctor",
+   "pos": "noun",
+   "category": "Jobs",
+   "synonyms_hi": [
+    "डाक्टर",
+    "वैद्य"
+   ],
+   "synonyms_en": []
+  },
+  "dog": {
+   "index": 59,
+   "hi": "कुत्ता",
+   "en": "dog",
+   "pos": "noun",
+   "category": "Animals",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "door": {
+   "index": 60,
+   "hi": "दरवाज़ा",
+   "en": "door",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "दरवाजा"
+   ],
+   "synonyms_en": []
+  },
+  "dream": {
+   "index": 61,
+   "hi": "सपना",
+   "en": "dream",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "स्वप्न"
+   ],
+   "synonyms_en": []
+  },
+  "dress": {
+   "index": 62,
+   "hi": "पोशाक",
+   "en": "dress",
+   "pos": "noun",
+   "category": "Clothes",
+   "synonyms_hi": [
+    "ड्रेस"
+   ],
+   "synonyms_en": []
+  },
+  "dry": {
+   "index": 63,
+   "hi": "सूखा",
+   "en": "dry",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "सूखी"
+   ],
+   "synonyms_en": []
+  },
+  "election": {
+   "index": 64,
+   "hi": "चुनाव",
+   "en": "election",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "energy": {
+   "index": 65,
+   "hi": "ऊर्जा",
+   "en": "energy",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [
+    "ताक़त"
+   ],
+   "synonyms_en": []
+  },
+  "evening": {
+   "index": 66,
+   "hi": "शाम",
+   "en": "evening",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "exercise": {
+   "index": 67,
+   "hi": "व्यायाम",
+   "en": "exercise",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [
+    "कसरत"
+   ],
+   "synonyms_en": []
+  },
+  "exmonsoon": {
+   "index": 68,
+   "hi": "बरसात",
+   "en": "monsoon",
+   "pos": "time",
+   "category": "Seasons",
+   "synonyms_hi": [
+    "मानसून",
+    "बारिश"
+   ],
+   "synonyms_en": [
+    "rain",
+    "monsoon"
+   ]
+  },
+  "expensive": {
+   "index": 69,
+   "hi": "महँगा",
+   "en": "expensive",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "महंगा",
+    "महंगी"
+   ],
+   "synonyms_en": [
+    "costly"
+   ]
+  },
+  "fall": {
+   "index": 70,
+   "hi": "पतझड़",
+   "en": "autumn",
+   "pos": "time",
+   "category": "Seasons",
+   "synonyms_hi": [],
+   "synonyms_en": [
+    "fall",
+    "autumn"
+   ]
+  },
+  "family": {
+   "index": 71,
+   "hi": "परिवार",
+   "en": "family",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "famous": {
+   "index": 72,
+   "hi": "प्रसिद्ध",
+   "en": "famous",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "मशहूर"
+   ],
+   "synonyms_en": []
+  },
+  "fan": {
+   "index": 73,
+   "hi": "पंखा",
+   "en": "fan",
+   "pos": "noun",
+   "category": "Electronics",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "fast": {
+   "index": 74,
+   "hi": "तेज़",
+   "en": "fast",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "तेज",
+    "जल्दी"
+   ],
+   "synonyms_en": [
+    "quick"
+   ]
+  },
+  "father": {
+   "index": 75,
+   "hi": "पिता",
+   "en": "father",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [
+    "पापा",
+    "बाबूजी"
+   ],
+   "synonyms_en": [
+    "dad",
+    "papa"
+   ]
+  },
+  "female": {
+   "index": 76,
+   "hi": "महिला",
+   "en": "female",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "स्त्री"
+   ],
+   "synonyms_en": []
+  },
+  "fish": {
+   "index": 77,
+   "hi": "मछली",
+   "en": "fish",
+   "pos": "noun",
+   "category": "Animals",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "flat": {
+   "index": 78,
+   "hi": "चपटा",
+   "en": "flat",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "सपाट"
+   ],
+   "synonyms_en": []
+  },
+  "friday": {
+   "index": 79,
+   "hi": "शुक्रवार",
+   "en": "Friday",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "friend": {
+   "index": 80,
+   "hi": "दोस्त",
+   "en": "friend",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [
+    "मित्र"
+   ],
+   "synonyms_en": []
+  },
+  "gift": {
+   "index": 81,
+   "hi": "तोहफ़ा",
+   "en": "gift",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "उपहार",
+    "तोहफा"
+   ],
+   "synonyms_en": [
+    "present"
+   ]
+  },
+  "girl": {
+   "index": 82,
+   "hi": "लड़की",
+   "en": "girl",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "god": {
+   "index": 83,
+   "hi": "भगवान",
+   "en": "God",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [
+    "ईश्वर"
+   ],
+   "synonyms_en": []
+  },
+  "good": {
+   "index": 84,
+   "hi": "अच्छा",
+   "en": "good",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "अच्छी",
+    "अच्छे",
+    "बढ़िया"
+   ],
+   "synonyms_en": []
+  },
+  "goodafternoon": {
+   "index": 85,
+   "hi": "शुभ दोपहर",
+   "en": "good afternoon",
+   "pos": "greeting",
+   "category": "Greetings",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "goodevening": {
+   "index": 86,
+   "hi": "शुभ संध्या",
+   "en": "good evening",
+   "pos": "greeting",
+   "category": "Greetings",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "goodmorning": {
+   "index": 87,
+   "hi": "सुप्रभात",
+   "en": "good morning",
+   "pos": "greeting",
+   "category": "Greetings",
+   "synonyms_hi": [
+    "शुभ प्रभात"
+   ],
+   "synonyms_en": []
+  },
+  "goodnight": {
+   "index": 88,
+   "hi": "शुभ रात्रि",
+   "en": "good night",
+   "pos": "greeting",
+   "category": "Greetings",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "grandfather": {
+   "index": 89,
+   "hi": "दादा",
+   "en": "grandfather",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [
+    "नाना"
+   ],
+   "synonyms_en": []
+  },
+  "grandmother": {
+   "index": 90,
+   "hi": "दादी",
+   "en": "grandmother",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [
+    "नानी"
+   ],
+   "synonyms_en": []
+  },
+  "green": {
+   "index": 91,
+   "hi": "हरा",
+   "en": "green",
+   "pos": "adj",
+   "category": "Colours",
+   "synonyms_hi": [
+    "हरी"
+   ],
+   "synonyms_en": []
+  },
+  "grey": {
+   "index": 92,
+   "hi": "स्लेटी",
+   "en": "grey",
+   "pos": "adj",
+   "category": "Colours",
+   "synonyms_hi": [
+    "धूसर"
+   ],
+   "synonyms_en": [
+    "gray"
+   ]
+  },
+  "ground": {
+   "index": 93,
+   "hi": "मैदान",
+   "en": "ground",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [
+    "ज़मीन",
+    "जमीन"
+   ],
+   "synonyms_en": []
+  },
+  "gun": {
+   "index": 94,
+   "hi": "बंदूक",
+   "en": "gun",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "happy": {
+   "index": 95,
+   "hi": "ख़ुश",
+   "en": "happy",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "खुश",
+    "प्रसन्न"
+   ],
+   "synonyms_en": []
+  },
+  "hard": {
+   "index": 96,
+   "hi": "कठोर",
+   "en": "hard",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "सख़्त",
+    "कठिन"
+   ],
+   "synonyms_en": []
+  },
+  "hat": {
+   "index": 97,
+   "hi": "टोपी",
+   "en": "hat",
+   "pos": "noun",
+   "category": "Clothes",
+   "synonyms_hi": [],
+   "synonyms_en": [
+    "cap"
+   ]
+  },
+  "he": {
+   "index": 98,
+   "hi": "वह",
+   "en": "he",
+   "pos": "pronoun",
+   "category": "Pronouns",
+   "synonyms_hi": [
+    "वो"
+   ],
+   "synonyms_en": [
+    "him"
+   ]
+  },
+  "healthy": {
+   "index": 99,
+   "hi": "स्वस्थ",
+   "en": "healthy",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "तंदुरुस्त"
+   ],
+   "synonyms_en": []
+  },
+  "heavy": {
+   "index": 100,
+   "hi": "भारी",
+   "en": "heavy",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "hello": {
+   "index": 101,
+   "hi": "नमस्ते",
+   "en": "hello",
+   "pos": "greeting",
+   "category": "Greetings",
+   "synonyms_hi": [
+    "नमस्कार",
+    "हेलो"
+   ],
+   "synonyms_en": [
+    "hi"
+   ]
+  },
+  "high": {
+   "index": 102,
+   "hi": "ऊँचा",
+   "en": "high",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "ऊंचा"
+   ],
+   "synonyms_en": []
+  },
+  "horse": {
+   "index": 103,
+   "hi": "घोड़ा",
+   "en": "horse",
+   "pos": "noun",
+   "category": "Animals",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "hospital": {
+   "index": 104,
+   "hi": "अस्पताल",
+   "en": "hospital",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "hot": {
+   "index": 105,
+   "hi": "गर्म",
+   "en": "hot",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "गरम"
+   ],
+   "synonyms_en": []
+  },
+  "hour": {
+   "index": 106,
+   "hi": "घंटा",
+   "en": "hour",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "house": {
+   "index": 107,
+   "hi": "घर",
+   "en": "house",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [
+    "मकान"
+   ],
+   "synonyms_en": [
+    "home"
+   ]
+  },
+  "howareyou": {
+   "index": 108,
+   "hi": "आप कैसे हैं",
+   "en": "how are you",
+   "pos": "greeting",
+   "category": "Greetings",
+   "synonyms_hi": [
+    "कैसे हो",
+    "कैसे हैं"
+   ],
+   "synonyms_en": []
+  },
+  "husband": {
+   "index": 109,
+   "hi": "पति",
+   "en": "husband",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "i": {
+   "index": 110,
+   "hi": "मैं",
+   "en": "I",
+   "pos": "pronoun",
+   "category": "Pronouns",
+   "synonyms_hi": [
+    "मुझे",
+    "मेरा",
+    "मेरी",
+    "मुझ"
+   ],
+   "synonyms_en": [
+    "me",
+    "my"
+   ]
+  },
+  "india": {
+   "index": 111,
+   "hi": "भारत",
+   "en": "India",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [
+    "हिंदुस्तान"
+   ],
+   "synonyms_en": []
+  },
+  "it": {
+   "index": 112,
+   "hi": "यह",
+   "en": "it",
+   "pos": "pronoun",
+   "category": "Pronouns",
+   "synonyms_hi": [
+    "ये"
+   ],
+   "synonyms_en": [
+    "this"
+   ]
+  },
+  "job": {
+   "index": 113,
+   "hi": "नौकरी",
+   "en": "job",
+   "pos": "noun",
+   "category": "Jobs",
+   "synonyms_hi": [
+    "काम"
+   ],
+   "synonyms_en": [
+    "work"
+   ]
+  },
+  "key": {
+   "index": 114,
+   "hi": "चाबी",
+   "en": "key",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "चाभी"
+   ],
+   "synonyms_en": []
+  },
+  "king": {
+   "index": 115,
+   "hi": "राजा",
+   "en": "king",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "kitchen": {
+   "index": 116,
+   "hi": "रसोई",
+   "en": "kitchen",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "किचन"
+   ],
+   "synonyms_en": []
+  },
+  "lamp": {
+   "index": 117,
+   "hi": "दीपक",
+   "en": "lamp",
+   "pos": "noun",
+   "category": "Electronics",
+   "synonyms_hi": [
+    "लैंप"
+   ],
+   "synonyms_en": []
+  },
+  "laptop": {
+   "index": 118,
+   "hi": "लैपटॉप",
+   "en": "laptop",
+   "pos": "noun",
+   "category": "Electronics",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "lawyer": {
+   "index": 119,
+   "hi": "वकील",
+   "en": "lawyer",
+   "pos": "noun",
+   "category": "Jobs",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "letter": {
+   "index": 120,
+   "hi": "चिट्ठी",
+   "en": "letter",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "पत्र"
+   ],
+   "synonyms_en": []
+  },
+  "library": {
+   "index": 121,
+   "hi": "पुस्तकालय",
+   "en": "library",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [
+    "लाइब्रेरी"
+   ],
+   "synonyms_en": []
+  },
+  "light": {
+   "index": 122,
+   "hi": "रोशनी",
+   "en": "light",
+   "pos": "noun",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "बत्ती"
+   ],
+   "synonyms_en": []
+  },
+  "location": {
+   "index": 123,
+   "hi": "जगह",
+   "en": "location",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [
+    "स्थान"
+   ],
+   "synonyms_en": [
+    "place"
+   ]
+  },
+  "lock": {
+   "index": 124,
+   "hi": "ताला",
+   "en": "lock",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "long": {
+   "index": 125,
+   "hi": "लंबा",
+   "en": "long",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "लम्बा",
+    "लंबी"
+   ],
+   "synonyms_en": []
+  },
+  "loose": {
+   "index": 126,
+   "hi": "ढीला",
+   "en": "loose",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "ढीली"
+   ],
+   "synonyms_en": []
+  },
+  "loud": {
+   "index": 127,
+   "hi": "ज़ोर से",
+   "en": "loud",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "तेज़ आवाज़"
+   ],
+   "synonyms_en": []
+  },
+  "low": {
+   "index": 128,
+   "hi": "नीचा",
+   "en": "low",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "कम"
+   ],
+   "synonyms_en": []
+  },
+  "male": {
+   "index": 129,
+   "hi": "पुरुष",
+   "en": "male",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "man": {
+   "index": 130,
+   "hi": "आदमी",
+   "en": "man",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [
+    "पुरुष"
+   ],
+   "synonyms_en": []
+  },
+  "manager": {
+   "index": 131,
+   "hi": "प्रबंधक",
+   "en": "manager",
+   "pos": "noun",
+   "category": "Jobs",
+   "synonyms_hi": [
+    "मैनेजर"
+   ],
+   "synonyms_en": []
+  },
+  "market": {
+   "index": 132,
+   "hi": "बाज़ार",
+   "en": "market",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [
+    "बाजार"
+   ],
+   "synonyms_en": []
+  },
+  "marriage": {
+   "index": 133,
+   "hi": "शादी",
+   "en": "marriage",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [
+    "विवाह"
+   ],
+   "synonyms_en": [
+    "wedding"
+   ]
+  },
+  "mean": {
+   "index": 134,
+   "hi": "मतलबी",
+   "en": "mean",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "medicine": {
+   "index": 135,
+   "hi": "दवाई",
+   "en": "medicine",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [
+    "दवा"
+   ],
+   "synonyms_en": []
+  },
+  "minute": {
+   "index": 136,
+   "hi": "मिनट",
+   "en": "minute",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "monday": {
+   "index": 137,
+   "hi": "सोमवार",
+   "en": "Monday",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "money": {
+   "index": 138,
+   "hi": "पैसा",
+   "en": "money",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [
+    "पैसे",
+    "रुपया",
+    "रुपये"
+   ],
+   "synonyms_en": []
+  },
+  "month": {
+   "index": 139,
+   "hi": "महीना",
+   "en": "month",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "morning": {
+   "index": 140,
+   "hi": "सुबह",
+   "en": "morning",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "mother": {
+   "index": 141,
+   "hi": "माँ",
+   "en": "mother",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [
+    "माता",
+    "मम्मी",
+    "मां"
+   ],
+   "synonyms_en": [
+    "mom",
+    "mummy"
+   ]
+  },
+  "mouse": {
+   "index": 142,
+   "hi": "चूहा",
+   "en": "mouse",
+   "pos": "noun",
+   "category": "Animals",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "narrow": {
+   "index": 143,
+   "hi": "संकरा",
+   "en": "narrow",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "पतला रास्ता"
+   ],
+   "synonyms_en": []
+  },
+  "neighbour": {
+   "index": 144,
+   "hi": "पड़ोसी",
+   "en": "neighbour",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [],
+   "synonyms_en": [
+    "neighbor"
+   ]
+  },
+  "new": {
+   "index": 145,
+   "hi": "नया",
+   "en": "new",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "नई",
+    "नए"
+   ],
+   "synonyms_en": []
+  },
+  "newspaper": {
+   "index": 146,
+   "hi": "अख़बार",
+   "en": "newspaper",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [
+    "अखबार"
+   ],
+   "synonyms_en": []
+  },
+  "nice": {
+   "index": 147,
+   "hi": "बढ़िया",
+   "en": "nice",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "night": {
+   "index": 148,
+   "hi": "रात",
+   "en": "night",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "office": {
+   "index": 149,
+   "hi": "दफ़्तर",
+   "en": "office",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [
+    "ऑफिस",
+    "दफ्तर"
+   ],
+   "synonyms_en": []
+  },
+  "old": {
+   "index": 150,
+   "hi": "पुराना",
+   "en": "old",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "बूढ़ा",
+    "पुरानी"
+   ],
+   "synonyms_en": []
+  },
+  "orange": {
+   "index": 151,
+   "hi": "नारंगी",
+   "en": "orange",
+   "pos": "adj",
+   "category": "Colours",
+   "synonyms_hi": [
+    "संतरी"
+   ],
+   "synonyms_en": []
+  },
+  "page": {
+   "index": 152,
+   "hi": "पन्ना",
+   "en": "page",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "पृष्ठ"
+   ],
+   "synonyms_en": []
+  },
+  "paint": {
+   "index": 153,
+   "hi": "रंग करना",
+   "en": "paint",
+   "pos": "verb",
+   "category": "Home",
+   "synonyms_hi": [
+    "पेंट"
+   ],
+   "synonyms_en": []
+  },
+  "pant": {
+   "index": 154,
+   "hi": "पैंट",
+   "en": "pant",
+   "pos": "noun",
+   "category": "Clothes",
+   "synonyms_hi": [],
+   "synonyms_en": [
+    "pants",
+    "trousers"
+   ]
+  },
+  "paper": {
+   "index": 155,
+   "hi": "कागज़",
+   "en": "paper",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "कागज"
+   ],
+   "synonyms_en": []
+  },
+  "parent": {
+   "index": 156,
+   "hi": "माता-पिता",
+   "en": "parent",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [],
+   "synonyms_en": [
+    "parents"
+   ]
+  },
+  "park": {
+   "index": 157,
+   "hi": "पार्क",
+   "en": "park",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [
+    "बगीचा"
+   ],
+   "synonyms_en": []
+  },
+  "patient": {
+   "index": 158,
+   "hi": "मरीज़",
+   "en": "patient",
+   "pos": "noun",
+   "category": "Jobs",
+   "synonyms_hi": [
+    "मरीज",
+    "रोगी"
+   ],
+   "synonyms_en": []
+  },
+  "peace": {
+   "index": 159,
+   "hi": "शांति",
+   "en": "peace",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "pen": {
+   "index": 160,
+   "hi": "पेन",
+   "en": "pen",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "कलम"
+   ],
+   "synonyms_en": []
+  },
+  "pencil": {
+   "index": 161,
+   "hi": "पेंसिल",
+   "en": "pencil",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "photograph": {
+   "index": 162,
+   "hi": "तस्वीर",
+   "en": "photograph",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "फ़ोटो",
+    "फोटो"
+   ],
+   "synonyms_en": [
+    "photo",
+    "picture"
+   ]
+  },
+  "pink": {
+   "index": 163,
+   "hi": "गुलाबी",
+   "en": "pink",
+   "pos": "adj",
+   "category": "Colours",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "plane": {
+   "index": 164,
+   "hi": "हवाई जहाज़",
+   "en": "aeroplane",
+   "pos": "noun",
+   "category": "Means of Transportation",
+   "synonyms_hi": [
+    "जहाज़",
+    "विमान"
+   ],
+   "synonyms_en": [
+    "plane",
+    "airplane",
+    "flight"
+   ]
+  },
+  "player": {
+   "index": 165,
+   "hi": "खिलाड़ी",
+   "en": "player",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "pleased": {
+   "index": 166,
+   "hi": "प्रसन्न",
+   "en": "pleased",
+   "pos": "adj",
+   "category": "Greetings",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "pocket": {
+   "index": 167,
+   "hi": "जेब",
+   "en": "pocket",
+   "pos": "noun",
+   "category": "Clothes",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "police": {
+   "index": 168,
+   "hi": "पुलिस",
+   "en": "police",
+   "pos": "noun",
+   "category": "Jobs",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "poor": {
+   "index": 169,
+   "hi": "ग़रीब",
+   "en": "poor",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "गरीब"
+   ],
+   "synonyms_en": []
+  },
+  "president": {
+   "index": 170,
+   "hi": "राष्ट्रपति",
+   "en": "president",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "price": {
+   "index": 171,
+   "hi": "क़ीमत",
+   "en": "price",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [
+    "कीमत",
+    "दाम"
+   ],
+   "synonyms_en": [
+    "cost",
+    "rate"
+   ]
+  },
+  "priest": {
+   "index": 172,
+   "hi": "पुजारी",
+   "en": "priest",
+   "pos": "noun",
+   "category": "Jobs",
+   "synonyms_hi": [
+    "पंडित"
+   ],
+   "synonyms_en": []
+  },
+  "queen": {
+   "index": 173,
+   "hi": "रानी",
+   "en": "queen",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "quiet": {
+   "index": 174,
+   "hi": "चुप",
+   "en": "quiet",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "शांत"
+   ],
+   "synonyms_en": [
+    "silent"
+   ]
+  },
+  "raceethnicity": {
+   "index": 175,
+   "hi": "जाति",
+   "en": "ethnicity",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [
+    "नस्ल"
+   ],
+   "synonyms_en": [
+    "race"
+   ]
+  },
+  "radio": {
+   "index": 176,
+   "hi": "रेडियो",
+   "en": "radio",
+   "pos": "noun",
+   "category": "Electronics",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "red": {
+   "index": 177,
+   "hi": "लाल",
+   "en": "red",
+   "pos": "adj",
+   "category": "Colours",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "religion": {
+   "index": 178,
+   "hi": "धर्म",
+   "en": "religion",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "reporter": {
+   "index": 179,
+   "hi": "पत्रकार",
+   "en": "reporter",
+   "pos": "noun",
+   "category": "Jobs",
+   "synonyms_hi": [
+    "रिपोर्टर"
+   ],
+   "synonyms_en": [
+    "journalist"
+   ]
+  },
+  "restaurant": {
+   "index": 180,
+   "hi": "होटल",
+   "en": "restaurant",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [
+    "रेस्टोरेंट",
+    "ढाबा"
+   ],
+   "synonyms_en": []
+  },
+  "rich": {
+   "index": 181,
+   "hi": "अमीर",
+   "en": "rich",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "धनी"
+   ],
+   "synonyms_en": []
+  },
+  "ring": {
+   "index": 182,
+   "hi": "अंगूठी",
+   "en": "ring",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "sad": {
+   "index": 183,
+   "hi": "दुखी",
+   "en": "sad",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "उदास"
+   ],
+   "synonyms_en": []
+  },
+  "saturday": {
+   "index": 184,
+   "hi": "शनिवार",
+   "en": "Saturday",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "school": {
+   "index": 185,
+   "hi": "स्कूल",
+   "en": "school",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [
+    "विद्यालय"
+   ],
+   "synonyms_en": []
+  },
+  "science": {
+   "index": 186,
+   "hi": "विज्ञान",
+   "en": "science",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "screen": {
+   "index": 187,
+   "hi": "स्क्रीन",
+   "en": "screen",
+   "pos": "noun",
+   "category": "Electronics",
+   "synonyms_hi": [
+    "परदा"
+   ],
+   "synonyms_en": []
+  },
+  "season": {
+   "index": 188,
+   "hi": "मौसम",
+   "en": "season",
+   "pos": "time",
+   "category": "Seasons",
+   "synonyms_hi": [
+    "ऋतु"
+   ],
+   "synonyms_en": [
+    "weather"
+   ]
+  },
+  "second": {
+   "index": 189,
+   "hi": "सेकंड",
+   "en": "second",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "secondnumber": {
+   "index": 190,
+   "hi": "दूसरा",
+   "en": "second (number)",
+   "pos": "adj",
+   "category": "Days and Time",
+   "synonyms_hi": [
+    "दूसरी"
+   ],
+   "synonyms_en": []
+  },
+  "secretary": {
+   "index": 191,
+   "hi": "सचिव",
+   "en": "secretary",
+   "pos": "noun",
+   "category": "Jobs",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "shallow": {
+   "index": 192,
+   "hi": "उथला",
+   "en": "shallow",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "she": {
+   "index": 193,
+   "hi": "वह",
+   "en": "she",
+   "pos": "pronoun",
+   "category": "Pronouns",
+   "synonyms_hi": [],
+   "synonyms_en": [
+    "her"
+   ]
+  },
+  "shirt": {
+   "index": 194,
+   "hi": "कमीज़",
+   "en": "shirt",
+   "pos": "noun",
+   "category": "Clothes",
+   "synonyms_hi": [
+    "शर्ट",
+    "कमीज"
+   ],
+   "synonyms_en": []
+  },
+  "shoes": {
+   "index": 195,
+   "hi": "जूते",
+   "en": "shoes",
+   "pos": "noun",
+   "category": "Clothes",
+   "synonyms_hi": [
+    "जूता"
+   ],
+   "synonyms_en": [
+    "shoe"
+   ]
+  },
+  "short": {
+   "index": 196,
+   "hi": "छोटा",
+   "en": "short",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "नाटा"
+   ],
+   "synonyms_en": []
+  },
+  "sick": {
+   "index": 197,
+   "hi": "बीमार",
+   "en": "sick",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "अस्वस्थ"
+   ],
+   "synonyms_en": [
+    "ill"
+   ]
+  },
+  "sign": {
+   "index": 198,
+   "hi": "संकेत",
+   "en": "sign",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [
+    "इशारा"
+   ],
+   "synonyms_en": []
+  },
+  "sister": {
+   "index": 199,
+   "hi": "बहन",
+   "en": "sister",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [
+    "दीदी"
+   ],
+   "synonyms_en": []
+  },
+  "skirt": {
+   "index": 200,
+   "hi": "स्कर्ट",
+   "en": "skirt",
+   "pos": "noun",
+   "category": "Clothes",
+   "synonyms_hi": [
+    "घाघरा"
+   ],
+   "synonyms_en": []
+  },
+  "slow": {
+   "index": 201,
+   "hi": "धीमा",
+   "en": "slow",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "धीरे"
+   ],
+   "synonyms_en": [
+    "slowly"
+   ]
+  },
+  "smalllittle": {
+   "index": 202,
+   "hi": "छोटा",
+   "en": "small",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "छोटी",
+    "छोटे",
+    "थोड़ा"
+   ],
+   "synonyms_en": [
+    "little"
+   ]
+  },
+  "soap": {
+   "index": 203,
+   "hi": "साबुन",
+   "en": "soap",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "soft": {
+   "index": 204,
+   "hi": "नरम",
+   "en": "soft",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "मुलायम"
+   ],
+   "synonyms_en": []
+  },
+  "soldier": {
+   "index": 205,
+   "hi": "सैनिक",
+   "en": "soldier",
+   "pos": "noun",
+   "category": "Jobs",
+   "synonyms_hi": [
+    "फ़ौजी",
+    "जवान"
+   ],
+   "synonyms_en": []
+  },
+  "son": {
+   "index": 206,
+   "hi": "बेटा",
+   "en": "son",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [
+    "पुत्र"
+   ],
+   "synonyms_en": []
+  },
+  "sport": {
+   "index": 207,
+   "hi": "खेल",
+   "en": "sport",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [],
+   "synonyms_en": [
+    "game",
+    "sports"
+   ]
+  },
+  "spring": {
+   "index": 208,
+   "hi": "वसंत",
+   "en": "spring",
+   "pos": "time",
+   "category": "Seasons",
+   "synonyms_hi": [
+    "बसंत"
+   ],
+   "synonyms_en": []
+  },
+  "storeorshop": {
+   "index": 209,
+   "hi": "दुकान",
+   "en": "shop",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [
+    "स्टोर"
+   ],
+   "synonyms_en": [
+    "store"
+   ]
+  },
+  "streetorroad": {
+   "index": 210,
+   "hi": "सड़क",
+   "en": "road",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [
+    "गली",
+    "रास्ता"
+   ],
+   "synonyms_en": [
+    "street"
+   ]
+  },
+  "strong": {
+   "index": 211,
+   "hi": "मज़बूत",
+   "en": "strong",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "मजबूत",
+    "ताक़तवर"
+   ],
+   "synonyms_en": []
+  },
+  "student": {
+   "index": 212,
+   "hi": "विद्यार्थी",
+   "en": "student",
+   "pos": "noun",
+   "category": "Jobs",
+   "synonyms_hi": [
+    "छात्र"
+   ],
+   "synonyms_en": []
+  },
+  "suit": {
+   "index": 213,
+   "hi": "सूट",
+   "en": "suit",
+   "pos": "noun",
+   "category": "Clothes",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "summer": {
+   "index": 214,
+   "hi": "गर्मी",
+   "en": "summer",
+   "pos": "time",
+   "category": "Seasons",
+   "synonyms_hi": [
+    "गर्मियाँ"
+   ],
+   "synonyms_en": []
+  },
+  "sunday": {
+   "index": 215,
+   "hi": "रविवार",
+   "en": "Sunday",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [
+    "इतवार"
+   ],
+   "synonyms_en": []
+  },
+  "table": {
+   "index": 216,
+   "hi": "मेज़",
+   "en": "table",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "टेबल",
+    "मेज"
+   ],
+   "synonyms_en": []
+  },
+  "tall": {
+   "index": 217,
+   "hi": "लंबा",
+   "en": "tall",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "teacher": {
+   "index": 218,
+   "hi": "शिक्षक",
+   "en": "teacher",
+   "pos": "noun",
+   "category": "Jobs",
+   "synonyms_hi": [
+    "अध्यापक",
+    "टीचर",
+    "मास्टर"
+   ],
+   "synonyms_en": []
+  },
+  "team": {
+   "index": 219,
+   "hi": "टीम",
+   "en": "team",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [
+    "दल"
+   ],
+   "synonyms_en": []
+  },
+  "technology": {
+   "index": 220,
+   "hi": "तकनीक",
+   "en": "technology",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [
+    "टेक्नोलॉजी"
+   ],
+   "synonyms_en": []
+  },
+  "telephone": {
+   "index": 221,
+   "hi": "टेलीफ़ोन",
+   "en": "telephone",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "टेलीफोन"
+   ],
+   "synonyms_en": []
+  },
+  "television": {
+   "index": 222,
+   "hi": "टीवी",
+   "en": "television",
+   "pos": "noun",
+   "category": "Electronics",
+   "synonyms_hi": [
+    "दूरदर्शन"
+   ],
+   "synonyms_en": [
+    "tv"
+   ]
+  },
+  "temple": {
+   "index": 223,
+   "hi": "मंदिर",
+   "en": "temple",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "thankyou": {
+   "index": 224,
+   "hi": "धन्यवाद",
+   "en": "thank you",
+   "pos": "greeting",
+   "category": "Greetings",
+   "synonyms_hi": [
+    "शुक्रिया",
+    "थैंक्यू"
+   ],
+   "synonyms_en": [
+    "thanks"
+   ]
+  },
+  "they": {
+   "index": 225,
+   "hi": "वे",
+   "en": "they",
+   "pos": "pronoun",
+   "category": "Pronouns",
+   "synonyms_hi": [
+    "वो लोग"
+   ],
+   "synonyms_en": [
+    "them"
+   ]
+  },
+  "thick": {
+   "index": 226,
+   "hi": "मोटा",
+   "en": "thick",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "मोटी"
+   ],
+   "synonyms_en": []
+  },
+  "thin": {
+   "index": 227,
+   "hi": "पतला",
+   "en": "thin",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "पतली"
+   ],
+   "synonyms_en": []
+  },
+  "thursday": {
+   "index": 228,
+   "hi": "गुरुवार",
+   "en": "Thursday",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [
+    "बृहस्पतिवार"
+   ],
+   "synonyms_en": []
+  },
+  "tight": {
+   "index": 229,
+   "hi": "कसा हुआ",
+   "en": "tight",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "टाइट"
+   ],
+   "synonyms_en": []
+  },
+  "time": {
+   "index": 230,
+   "hi": "समय",
+   "en": "time",
+   "pos": "noun",
+   "category": "Days and Time",
+   "synonyms_hi": [
+    "वक़्त",
+    "टाइम",
+    "वक्त"
+   ],
+   "synonyms_en": []
+  },
+  "today": {
+   "index": 231,
+   "hi": "आज",
+   "en": "today",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "tomorrow": {
+   "index": 232,
+   "hi": "कल",
+   "en": "tomorrow",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "tool": {
+   "index": 233,
+   "hi": "औज़ार",
+   "en": "tool",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [
+    "औजार"
+   ],
+   "synonyms_en": []
+  },
+  "train": {
+   "index": 234,
+   "hi": "रेलगाड़ी",
+   "en": "train",
+   "pos": "noun",
+   "category": "Means of Transportation",
+   "synonyms_hi": [
+    "ट्रेन"
+   ],
+   "synonyms_en": []
+  },
+  "trainstation": {
+   "index": 235,
+   "hi": "रेलवे स्टेशन",
+   "en": "train station",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [
+    "स्टेशन"
+   ],
+   "synonyms_en": [
+    "station",
+    "railway station"
+   ]
+  },
+  "trainticket": {
+   "index": 236,
+   "hi": "ट्रेन टिकट",
+   "en": "train ticket",
+   "pos": "noun",
+   "category": "Means of Transportation",
+   "synonyms_hi": [
+    "टिकट"
+   ],
+   "synonyms_en": [
+    "ticket"
+   ]
+  },
+  "transportation": {
+   "index": 237,
+   "hi": "यातायात",
+   "en": "transport",
+   "pos": "noun",
+   "category": "Means of Transportation",
+   "synonyms_hi": [
+    "परिवहन"
+   ],
+   "synonyms_en": [
+    "transportation"
+   ]
+  },
+  "truck": {
+   "index": 238,
+   "hi": "ट्रक",
+   "en": "truck",
+   "pos": "noun",
+   "category": "Means of Transportation",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "tshirt": {
+   "index": 239,
+   "hi": "टी-शर्ट",
+   "en": "T-shirt",
+   "pos": "noun",
+   "category": "Clothes",
+   "synonyms_hi": [
+    "टीशर्ट"
+   ],
+   "synonyms_en": [
+    "tshirt"
+   ]
+  },
+  "tuesday": {
+   "index": 240,
+   "hi": "मंगलवार",
+   "en": "Tuesday",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "ugly": {
+   "index": 241,
+   "hi": "बदसूरत",
+   "en": "ugly",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "university": {
+   "index": 242,
+   "hi": "विश्वविद्यालय",
+   "en": "university",
+   "pos": "noun",
+   "category": "Places",
+   "synonyms_hi": [
+    "यूनिवर्सिटी"
+   ],
+   "synonyms_en": [
+    "college"
+   ]
+  },
+  "waiter": {
+   "index": 243,
+   "hi": "वेटर",
+   "en": "waiter",
+   "pos": "noun",
+   "category": "Jobs",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "war": {
+   "index": 244,
+   "hi": "युद्ध",
+   "en": "war",
+   "pos": "noun",
+   "category": "Society",
+   "synonyms_hi": [
+    "जंग",
+    "लड़ाई"
+   ],
+   "synonyms_en": []
+  },
+  "warm": {
+   "index": 245,
+   "hi": "गुनगुना",
+   "en": "warm",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "we": {
+   "index": 246,
+   "hi": "हम",
+   "en": "we",
+   "pos": "pronoun",
+   "category": "Pronouns",
+   "synonyms_hi": [
+    "हमें",
+    "हमारा"
+   ],
+   "synonyms_en": [
+    "us",
+    "our"
+   ]
+  },
+  "weak": {
+   "index": 247,
+   "hi": "कमज़ोर",
+   "en": "weak",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "कमजोर"
+   ],
+   "synonyms_en": []
+  },
+  "wednesday": {
+   "index": 248,
+   "hi": "बुधवार",
+   "en": "Wednesday",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "week": {
+   "index": 249,
+   "hi": "हफ़्ता",
+   "en": "week",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [
+    "सप्ताह",
+    "हफ्ता"
+   ],
+   "synonyms_en": []
+  },
+  "wet": {
+   "index": 250,
+   "hi": "गीला",
+   "en": "wet",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "भीगा"
+   ],
+   "synonyms_en": []
+  },
+  "white": {
+   "index": 251,
+   "hi": "सफ़ेद",
+   "en": "white",
+   "pos": "adj",
+   "category": "Colours",
+   "synonyms_hi": [
+    "सफेद"
+   ],
+   "synonyms_en": []
+  },
+  "wide": {
+   "index": 252,
+   "hi": "चौड़ा",
+   "en": "wide",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "चौड़ी"
+   ],
+   "synonyms_en": []
+  },
+  "wife": {
+   "index": 253,
+   "hi": "पत्नी",
+   "en": "wife",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "window": {
+   "index": 254,
+   "hi": "खिड़की",
+   "en": "window",
+   "pos": "noun",
+   "category": "Home",
+   "synonyms_hi": [],
+   "synonyms_en": []
+  },
+  "winter": {
+   "index": 255,
+   "hi": "सर्दी",
+   "en": "winter",
+   "pos": "time",
+   "category": "Seasons",
+   "synonyms_hi": [
+    "ठंड का मौसम",
+    "जाड़ा"
+   ],
+   "synonyms_en": []
+  },
+  "woman": {
+   "index": 256,
+   "hi": "औरत",
+   "en": "woman",
+   "pos": "noun",
+   "category": "People",
+   "synonyms_hi": [
+    "महिला",
+    "स्त्री"
+   ],
+   "synonyms_en": []
+  },
+  "year": {
+   "index": 257,
+   "hi": "साल",
+   "en": "year",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [
+    "वर्ष"
+   ],
+   "synonyms_en": []
+  },
+  "yellow": {
+   "index": 258,
+   "hi": "पीला",
+   "en": "yellow",
+   "pos": "adj",
+   "category": "Colours",
+   "synonyms_hi": [
+    "पीली"
+   ],
+   "synonyms_en": []
+  },
+  "yesterday": {
+   "index": 259,
+   "hi": "कल",
+   "en": "yesterday",
+   "pos": "time",
+   "category": "Days and Time",
+   "synonyms_hi": [
+    "बीता कल"
+   ],
+   "synonyms_en": []
+  },
+  "you": {
+   "index": 260,
+   "hi": "आप",
+   "en": "you",
+   "pos": "pronoun",
+   "category": "Pronouns",
+   "synonyms_hi": [
+    "तुम",
+    "तू",
+    "आपका",
+    "आपकी",
+    "तुम्हारा"
+   ],
+   "synonyms_en": [
+    "your"
+   ]
+  },
+  "young": {
+   "index": 261,
+   "hi": "जवान",
+   "en": "young",
+   "pos": "adj",
+   "category": "Adjectives",
+   "synonyms_hi": [
+    "युवा"
+   ],
+   "synonyms_en": []
+  },
+  "youplural": {
+   "index": 262,
+   "hi": "आप सब",
+   "en": "you (all)",
+   "pos": "pronoun",
+   "category": "Pronouns",
+   "synonyms_hi": [
+    "आप लोग",
+    "तुम सब"
+   ],
+   "synonyms_en": [
+    "you all"
+   ]
+  }
+ }
+}
