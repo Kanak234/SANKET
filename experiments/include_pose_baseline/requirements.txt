@@ -1,0 +1,6 @@
+# SANKET Live — Windows/Linux, Python 3.11-3.13
+# opencv-contrib-python mediapipe ke saath khud aa jaata hai (alag se opencv-python mat daalna — dono takraate hain)
+mediapipe==1.2.2
+onnxruntime>=1.20
+numpy
+pyttsx3
