@@ -1,16 +1,16 @@
-# run_full_pipeline.ps1 — ONE command from raw INCLUDE videos to a ready-to-ship SANKET model.
+# run_full_pipeline.ps1 - ONE command from raw INCLUDE videos to a ready-to-ship SANKET model.
 #
 # WHY: Kanak runs this once on the i9 desktop (RTX 5060 Ti). Every step is resumable, so after a
 #      power cut he simply runs the same command again and it continues where it stopped.
-# STEPS: 1 install deps → 2 fetch frozen models (MediaPipe, Vosk) → 3 download INCLUDE (56.8 GB,
-#        resumable) → 4 extract landmarks (resumable) → 5 train from scratch (resumable)
-#        → 6 evaluate → 7 export ONNX + parity check → 8 build avatar sign dictionary → 9 self-test.
+# STEPS: 1 install deps -> 2 fetch frozen models (MediaPipe, Vosk) -> 3 download INCLUDE (56.8 GB,
+#        resumable) -> 4 extract landmarks (resumable) -> 5 train from scratch (resumable)
+#        -> 6 evaluate -> 7 export ONNX + parity check -> 8 build avatar sign dictionary -> 9 self-test.
 # The first failing step stops the script with its error message.
 #
 # Usage (PowerShell, in the repo folder):   .\scripts\run_full_pipeline.ps1
 # Optional: $env:SANKET_DATA = "E:\INCLUDE"  to put the dataset on another drive.
 #
-# -FromCache: skip steps 3–4 (download + extraction) because the landmark cache was made on Google
+# -FromCache: skip steps 3-4 (download + extraction) because the landmark cache was made on Google
 #             Colab (notebooks/SANKET_colab_landmarks.ipynb). Put SANKET_cache.zip from Google
 #             Drive next to this repo folder or pass -CacheZip <path>; it is unpacked into data\cache.
 

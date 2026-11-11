@@ -1,5 +1,5 @@
 @echo off
-REM SANKET Live — ek click: venv banao (sirf pehli baar), packages, phir app chalao.
+REM SANKET Live - ek click: venv banao (sirf pehli baar), packages, phir app chalao.
 REM Extra options aage pass hote hain, jaise:  run.bat --manual   ya   run.bat --camera 1
 REM Kyun uv: system pe naya Python (jaise 3.15) ho to mediapipe/onnxruntime ke packages nahi milte.
 REM          uv apna alag Python 3.13 download karke venv banata hai; system Python ko chhuta nahi.

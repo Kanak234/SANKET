@@ -27,7 +27,7 @@
   </Resources>
   <Applications>
     <Application Id="SANKET" Executable="SANKET\SANKET.exe" EntryPoint="Windows.FullTrustApplication">
-      <uap:VisualElements DisplayName="SANKET" Description="ISL ⇄ speech translator, fully offline"
+      <uap:VisualElements DisplayName="SANKET" Description="ISL to speech translator, fully offline"
                           BackgroundColor="transparent"
                           Square150x150Logo="assets\store\Square150x150Logo.png"
                           Square44x44Logo="assets\store\Square44x44Logo.png">
