@@ -145,9 +145,9 @@ Both directions are unit-tested with ≥ 30 sentence pairs in `tests/test_gramma
 ## 12. Decision log (ADR-lite)
 
 - 2026-11-11 — Own model, from scratch; no Sarvam/cloud API; fully offline. (Kanak)
-- 2026-11-11 — v1 vocabulary = INCLUDE 263 words; 2D avatar; Windows first, Android v2. (defaults taken by Claude; Kanak can change)
+- 2026-11-11 — v1 vocabulary = INCLUDE 263 words; 2D avatar; Windows first, Android v2. (default decisions; can be changed)
 - 2026-11-11 — Face lock & voice unlock dropped.
 - 2026-11-11 — Vosk + Windows TTS used as-is (no training) for speech parts.
-- 2026-11-11 — Built by Claude directly (Kanak's decision), not by an external agent. MediaPipe Holistic chosen over three separate landmarkers.
+- 2026-11-11 — MediaPipe Holistic chosen over three separate landmarkers.
 - 2026-11-11 — Official AI4Bharat INCLUDE split lists + label map (MIT) vendored in `training/splits/`, so no manual Google-Drive download is needed.
 - 2026-11-11 — Partner Center name reserved: SANKET, Store ID 9NH6TTQJQTGJ, identity KanakPrabhakar.SANKET.

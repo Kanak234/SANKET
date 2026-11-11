@@ -29,4 +29,4 @@ Step "7/9 Export ONNX + parity check"                       { uv run python -m t
 Step "8/9 Build avatar sign dictionary"                     { uv run python -m training.build_sign_dictionary }
 Step "9/9 App self-test"                                    { uv run python -m sanket --selftest }
 
-Write-Host "`nAll done. Send reports\metrics.json and reports\*.png to Claude for review." -ForegroundColor Green
+Write-Host "`nAll done. Review reports\metrics.json and reports\*.png." -ForegroundColor Green

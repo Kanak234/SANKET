@@ -8,7 +8,7 @@ WHAT: writes
       reports/confusion_matrix.png  which signs get mixed up
       reports/per_category.png      accuracy bar per INCLUDE category
       models/recognizer.json        {threshold, ...} read by sanket/core/recognizer.py
-NEXT: export_onnx.py; Kanak sends metrics.json + the PNGs to Claude for review.
+NEXT: export_onnx.py; metrics.json + the PNGs are reviewed before release.
 """
 
 from __future__ import annotations

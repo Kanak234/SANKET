@@ -4,12 +4,12 @@
 
 | Phase | What | Who | Done when |
 |---|---|---|---|
-| **P0** Setup | Repo `Kanak234/sanket`, venv, deps, docs in place | Nemotron (OpenCode) | `pytest` runs (empty), `ruff` clean |
-| **P1** Code | All of `sanket/`, `training/`, `packaging/`, tests with synthetic fixtures | Nemotron | Tests green with fake data; `--selftest` passes with a dummy ONNX |
+| **P0** Setup | Repo `Kanak234/sanket`, venv, deps, docs in place | Kanak | `pytest` runs (empty), `ruff` clean |
+| **P1** Code | All of `sanket/`, `training/`, `packaging/`, tests with synthetic fixtures | Kanak | Tests green with fake data; `--selftest` passes with a dummy ONNX |
 | **P2** Data | Download INCLUDE (56.8 GB → D:), extract landmarks | Kanak runs `scripts/run_full_pipeline.ps1` | `data/cache/` has ~4,292 `.npz` files |
 | **P3** Train | Train recognizer from scratch, evaluate, export ONNX, build sign dictionary | same script (resumable) | metrics.json meets PRD G2 |
-| **P4** Verify | Claude reviews code + metrics + runs checklist; Kanak tests on laptop with webcam | Claude + Kanak | PRD §9 all ticked |
-| **P5** Ship | MSIX → Microsoft Store (Preview), GitHub release, 30–45 s reel | Kanak (Partner Center), Claude writes listing + reel script | Store live |
+| **P4** Verify | Code + metrics review, checklist; webcam test on laptop | Kanak | PRD §9 all ticked |
+| **P5** Ship | MSIX → Microsoft Store (Preview), GitHub release, 30–45 s reel | Kanak (Partner Center, listing, reel) | Store live |
 | **P6** Community | Social post asking Deaf signers / ISL teachers to help; school friends onboarded; contribute mode data | Kanak + team | First external signer verifies avatar signs |
 | v2 | Android app (Kotlin + onnxruntime-mobile + MediaPipe Android), fingerspelling, more words | team | Play Store |
 

@@ -11,7 +11,7 @@ install deps → fetch MediaPipe + Vosk → download INCLUDE (56.8 GB) → extra
 from scratch → evaluate (PASS/FAIL vs 80% goal) → export ONNX (parity check) → build avatar
 signs → self-test.
 
-Then send Claude `reports\metrics.json`, `reports\confusion_matrix.png`, `reports\per_category.png`.
+Then review `reports\metrics.json`, `reports\confusion_matrix.png` and `reports\per_category.png`.
 
 ## 2. Try the app
 
