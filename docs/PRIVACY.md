@@ -1,6 +1,6 @@
 # SANKET — Privacy Policy
 
-Last updated: 11 November 2026 · Developer: Kanak Prabhakar · Contact: via https://github.com/Kanak234/Sankat/issues
+Last updated: 11 November 2026 · Developer: Kanak Prabhakar · Contact: via https://github.com/Kanak234/SANKET/issues
 
 **Short version: SANKET works completely offline. Nothing you sign, say or type ever leaves your computer.**
 

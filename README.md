@@ -40,7 +40,7 @@ VOICE → SIGN   mic → Vosk offline STT → Hindi/English→ISL rules → sign
 
 ## Quick start (Windows)
 ```powershell
-git clone https://github.com/Kanak234/Sankat; cd Sankat; .\scripts\run_full_pipeline.ps1; uv run python -m sanket
+git clone https://github.com/Kanak234/SANKET; cd SANKET; .\scripts\run_full_pipeline.ps1; uv run python -m sanket
 ```
 The pipeline downloads the INCLUDE dataset (56.8 GB, resumable), trains the recognizer on an NVIDIA GPU, builds the avatar dictionary and runs the self-test. See [`START_HERE.md`](START_HERE.md).
 

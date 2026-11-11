@@ -4,9 +4,9 @@
 **Category:** Productivity (secondary: Education)
 **Price:** Free · **Markets:** all
 **Age rating (IARC questionnaire):** no violence, no user-generated sharing, no purchases, no location → expected rating 3+
-**Privacy policy URL:** https://github.com/Kanak234/Sankat/blob/main/docs/PRIVACY.md (move to kanakprabhakar.online/sanket/privacy when the website page is live)
-**Website:** https://github.com/Kanak234/Sankat
-**Support contact:** https://github.com/Kanak234/Sankat/issues
+**Privacy policy URL:** https://github.com/Kanak234/SANKET/blob/main/docs/PRIVACY.md (move to kanakprabhakar.online/sanket/privacy when the website page is live)
+**Website:** https://github.com/Kanak234/SANKET
+**Support contact:** https://github.com/Kanak234/SANKET/issues
 
 ## Short description (≤ 100 chars)
 Offline two-way Indian Sign Language ⇄ speech translator. Preview: 263 everyday words.

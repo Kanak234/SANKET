@@ -3,7 +3,7 @@
 ## 1. Train the model + build everything (i9 desktop, RTX 5060 Ti) — one command
 
 ```powershell
-git clone https://github.com/Kanak234/Sankat D:\Projects\sanket; Set-Location D:\Projects\sanket; .\scripts\run_full_pipeline.ps1
+git clone https://github.com/Kanak234/SANKET D:\Projects\sanket; Set-Location D:\Projects\sanket; .\scripts\run_full_pipeline.ps1
 ```
 
 What it does (every step resumes after a power cut — just run the same command again):
