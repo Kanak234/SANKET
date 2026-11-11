@@ -34,5 +34,5 @@ Upload `dist\SANKET_1.0.0.0_x64.msix` in Partner Center → SANKET → Packages.
 | `sanket/core` | all logic: landmarks, normalisation, segmenter, recognizer, grammar, speech, avatar data |
 | `sanket/ui` | PySide6 screens |
 | `training` | download, extraction, model, training, evaluation, export, sign dictionary |
-| `tests` | 97 tests incl. a full synthetic train → export → app chain |
+| `tests` | 99 tests incl. a full synthetic train → export → app chain |
 | `docs` | PRD, TRD, UI/UX brief, roadmap + Gate 21, licences, how it works, Store listing, privacy |
