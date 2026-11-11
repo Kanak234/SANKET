@@ -75,10 +75,17 @@ def fetch_vosk(lang: str, url: str) -> None:
 
 
 def main() -> None:
+    import argparse
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--mediapipe-only", action="store_true",
+                    help="only the landmark model (Colab extraction needs nothing else)")
+    args = ap.parse_args()
     fetch_holistic()
-    for lang, url in VOSK.items():
-        fetch_vosk(lang, url)
-    print("all models present")
+    if not args.mediapipe_only:
+        for lang, url in VOSK.items():
+            fetch_vosk(lang, url)
+    print("all requested models present")
 
 
 if __name__ == "__main__":

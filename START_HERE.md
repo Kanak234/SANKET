@@ -13,6 +13,15 @@ signs → self-test.
 
 Then review `reports\metrics.json`, `reports\confusion_matrix.png` and `reports\per_category.png`.
 
+## 1b. Faster: make the landmark cache on Google Colab (Google data-centre internet is usually far faster than home)
+
+Open https://colab.research.google.com/github/Kanak234/SANKET/blob/main/notebooks/SANKET_colab_landmarks.ipynb
+→ CPU runtime → run all cells (resumable). Download `MyDrive/SANKET/SANKET_cache.zip` to Downloads, then:
+
+```powershell
+Set-Location D:\Projects\sanket; git pull; powershell -ExecutionPolicy Bypass -File .\scripts\run_full_pipeline.ps1 -FromCache
+```
+
 ## 2. Try the app
 
 ```powershell
@@ -34,5 +43,5 @@ Upload `dist\SANKET_1.0.0.0_x64.msix` in Partner Center → SANKET → Packages.
 | `sanket/core` | all logic: landmarks, normalisation, segmenter, recognizer, grammar, speech, avatar data |
 | `sanket/ui` | PySide6 screens |
 | `training` | download, extraction, model, training, evaluation, export, sign dictionary |
-| `tests` | 99 tests incl. a full synthetic train → export → app chain |
+| `tests` | 102 tests incl. a full synthetic train → export → app chain |
 | `docs` | PRD, TRD, UI/UX brief, roadmap + Gate 21, licences, how it works, Store listing, privacy |
