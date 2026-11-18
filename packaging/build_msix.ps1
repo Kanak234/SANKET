@@ -42,8 +42,10 @@ $manifest = (Get-Content packaging\AppxManifest.xml -Raw -Encoding UTF8).
     Replace("{PUBLISHER_DISPLAY_NAME}", $id.PUBLISHER_DISPLAY_NAME).Replace("{VERSION}", $id.VERSION)
 Set-Content "$stage\AppxManifest.xml" $manifest -Encoding UTF8
 
-$makeappx = Get-ChildItem "${env:ProgramFiles(x86)}\Windows Kits\10\bin" -Recurse -Filter makeappx.exe |
+$makeappx = Get-ChildItem "${env:ProgramFiles(x86)}\Windows Kits\10\bin" -Recurse -Filter makeappx.exe -ErrorAction SilentlyContinue |
     Where-Object { $_.FullName -match "\\x64\\" } | Sort-Object FullName -Descending | Select-Object -First 1
+# Fallback: Windows SDK na ho to $env:MAKEAPPX (jaise SHRAAP ke Tools\msix\sdk\makeappx.exe) use karo
+if (-not $makeappx -and $env:MAKEAPPX -and (Test-Path $env:MAKEAPPX)) { $makeappx = Get-Item $env:MAKEAPPX }
 if (-not $makeappx) { throw "makeappx.exe not found - install the Windows 10/11 SDK" }
 $out = "dist\SANKET_$($id.VERSION)_x64.msix"
 & $makeappx.FullName pack /d $stage /p $out /o

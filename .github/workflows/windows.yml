@@ -34,6 +34,7 @@ jobs:
       - name: Build SANKET.exe
         run: uv run --with pyinstaller pyinstaller packaging/sanket.spec --noconfirm --distpath dist --workpath build
       - name: Self-test of the built exe
+        timeout-minutes: 5
         shell: pwsh
         run: |
           $p = Start-Process dist\SANKET\SANKET.exe -ArgumentList "--selftest" -Wait -PassThru -NoNewWindow
