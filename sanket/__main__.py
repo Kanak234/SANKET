@@ -141,7 +141,18 @@ def selftest() -> int:
     return 1 if failed else 0
 
 
+def _safe_console() -> None:
+    """18 Nov FIX: Windows console cp1252 hai — self-test ka "→" / Hindi print karte hi .exe crash
+    ho kar error-dialog par atak jaata tha. UTF-8 + 'replace' = kabhi crash nahi."""
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")  # type: ignore[union-attr]
+        except Exception:  # noqa: BLE001 — windowed .exe mein stream None hota hai
+            pass
+
+
 def main(argv: list[str] | None = None) -> int:
+    _safe_console()
     ap = argparse.ArgumentParser(prog="sanket", description="SANKET — offline ISL ⇄ speech translator")
     ap.add_argument("--selftest", action="store_true", help="check models and logic, then exit")
     ap.add_argument("--debug", action="store_true", help="verbose logging")
