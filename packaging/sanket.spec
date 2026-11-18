@@ -33,7 +33,10 @@ a = Analysis(  # noqa: F821
     binaries=binaries,
     datas=datas,
     hiddenimports=["pyttsx3.drivers", "pyttsx3.drivers.sapi5", "comtypes.stream", "PySide6.QtSvgWidgets"],
-    excludes=["torch", "torchvision", "training", "tests", "matplotlib", "tkinter", "scipy", "sklearn"],
+    # 18 Nov FIX: "matplotlib" yahan se HATAYA — MediaPipe ka vision module import karte hi matplotlib
+    # maangta hai. Exclude hone se Store build mein camera thread "No module named 'matplotlib'" par
+    # chupchaap mar jaata tha (camera box kaala). Self-test ka "MediaPipe live" check ab isko pakadta hai.
+    excludes=["torch", "torchvision", "training", "tests", "tkinter", "scipy", "sklearn"],
     noarchive=False,
 )
 pyz = PYZ(a.pure)  # noqa: F821
