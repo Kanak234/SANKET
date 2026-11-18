@@ -15,10 +15,11 @@ NEXT: hosted by main_window.py; uses core/* for all logic (this file only wires 
 from __future__ import annotations
 
 import html
+import sys
 
 import numpy as np
-from PySide6.QtCore import QPointF, Qt, QThreadPool, QTimer
-from PySide6.QtGui import QColor, QImage, QPainter, QPen, QPixmap
+from PySide6.QtCore import QPointF, Qt, QThreadPool, QTimer, QUrl
+from PySide6.QtGui import QColor, QDesktopServices, QImage, QPainter, QPen, QPixmap
 from PySide6.QtWidgets import (
     QFrame,
     QHBoxLayout,
@@ -184,6 +185,13 @@ class ConversationView(QWidget):
         self.retry_btn.hide()
         self.retry_btn.clicked.connect(self.start_camera)
         sl.addWidget(self.retry_btn)
+        # 18 Nov FIX: Store (MSIX) apps ka camera Windows privacy setting se band ho sakta hai —
+        # yeh button seedha woh page kholta hai (ms-settings:privacy-webcam), taaki user khud ON kar sake.
+        self.cam_settings_btn = QPushButton(tr("camera_settings"))
+        self.cam_settings_btn.hide()
+        self.cam_settings_btn.clicked.connect(
+            lambda: QDesktopServices.openUrl(QUrl("ms-settings:privacy-webcam")))
+        sl.addWidget(self.cam_settings_btn)
         self.camera = CameraView()
         sl.addWidget(self.camera, 1)
         self.sign_chips = ChipRow()
@@ -245,6 +253,7 @@ class ConversationView(QWidget):
         self.stop_camera()
         self.banner.hide()
         self.retry_btn.hide()
+        self.cam_settings_btn.hide()
         self.worker = CameraWorker(self.recognizer, self.settings.camera_index)
         self.worker.frameReady.connect(self.camera.set_frame)
         self.worker.signingChanged.connect(self._on_signing)
@@ -261,8 +270,11 @@ class ConversationView(QWidget):
 
     def _on_camera_failed(self, why: str) -> None:
         self.banner.setText("⚠ " + (tr("no_camera") if why == "no_camera" else why))
+        self.banner.setWordWrap(True)
         self.banner.show()
         self.retry_btn.show()
+        if why == "no_camera" and sys.platform == "win32":
+            self.cam_settings_btn.show()
 
     def _on_signing(self, active: bool) -> None:
         self.camera.signing = active

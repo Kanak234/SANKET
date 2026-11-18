@@ -106,6 +106,23 @@ def selftest() -> int:
         if stt.available:
             check("speech-to-text runs offline", stt.transcribe_pcm(b"\x00\x00" * 16000) == "", "1 s silence")
 
+        # 18 Nov FIX: pehle self-test sirf dekhta tha ki .task FILE maujood hai — MediaPipe ko
+        # sach mein CHALA kar nahi dekhta tha. Store build mein file thi par MediaPipe start hi
+        # nahi hota tha, isliye camera box kaala rehta tha aur self-test phir bhi "OK" bolta tha.
+        # Ab wahi extractor banta hai jo CameraWorker banata hai, aur ek kaala frame process hota hai.
+        try:
+            from sanket.core.landmarks import HAND_TASK, POSE_TASK, HolisticExtractor, PoseHandExtractor
+
+            if POSE_TASK.exists() and HAND_TASK.exists():
+                ext = PoseHandExtractor()
+            else:
+                ext = HolisticExtractor()
+            pts = ext.process(np.zeros((480, 640, 3), np.uint8), 0)
+            ext.close()
+            check("MediaPipe live (camera pipeline)", pts.ndim == 2, f"{type(ext).__name__} {pts.shape}")
+        except Exception as exc:  # noqa: BLE001 — har error report karna hai
+            check("MediaPipe live (camera pipeline)", False, f"{type(exc).__name__}: {exc}")
+
         if is_isl:
             for task in ("pose_landmarker_full.task", "hand_landmarker.task"):
                 check(f"MediaPipe {task}", resource("models", "isl", task).exists())
@@ -116,7 +133,9 @@ def selftest() -> int:
 
     width = max(len(n) for n, _, _ in results)
     for name, ok, note in results:
-        print(f"  [{'OK ' if ok else 'XX '}] {name.ljust(width)}  {note}")
+        line = f"  [{'OK ' if ok else 'XX '}] {name.ljust(width)}  {note}"
+        print(line)
+        logging.getLogger("sanket.selftest").info(line)  # windowed .exe mein console nahi hota — log file mein bhi
     failed = [n for n, ok, _ in results if not ok]
     print(f"\nSANKET self-test: {len(results) - len(failed)}/{len(results)} passed")
     return 1 if failed else 0
@@ -127,8 +146,18 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--selftest", action="store_true", help="check models and logic, then exit")
     ap.add_argument("--debug", action="store_true", help="verbose logging")
     args = ap.parse_args(argv)
-    logging.basicConfig(level=logging.DEBUG if args.debug else logging.WARNING,
-                        format="%(levelname)s %(name)s: %(message)s")
+    # 18 Nov FIX: Store wala SANKET.exe window app hai (console nahi) — errors kahin nahi dikhte the.
+    # Ab har run ka log %LOCALAPPDATA%\\SANKET\\sanket.log mein bhi jaata hai (sirf text errors,
+    # koi camera frame / audio nahi), taaki bug aaye to yeh file bhej kar asli wajah pata chale.
+    handlers: list[logging.Handler] = [logging.StreamHandler()]
+    try:
+        from sanket.paths import user_dir
+
+        handlers.append(logging.FileHandler(user_dir() / "sanket.log", mode="w", encoding="utf-8"))
+    except OSError:
+        pass  # log file na bane to bhi app chalna chahiye
+    logging.basicConfig(level=logging.DEBUG if args.debug else logging.INFO,
+                        format="%(asctime)s %(levelname)s %(name)s: %(message)s", handlers=handlers)
     if args.selftest:
         return selftest()
     from sanket.ui.main_window import run

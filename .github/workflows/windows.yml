@@ -4,7 +4,7 @@
 name: windows-build
 on:
   push:
-    branches: [main]
+    branches: [main, 'fix/**']
   workflow_dispatch:
 jobs:
   test-and-build:
@@ -15,7 +15,14 @@ jobs:
       - name: Install Python 3.12 + deps
         run: uv sync --extra dev
       - name: Fetch frozen MediaPipe + Vosk models
-        run: uv run python scripts/fetch_models.py
+        # ISL model Hugging Face par PRIVATE hai: HF_TOKEN secret ho to aata hai, warna DEMO build
+        # (MediaPipe .task + Vosk phir bhi aate hain, taaki camera pipeline ka live test chal sake).
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        shell: pwsh
+        run: |
+          uv run python scripts/fetch_models.py
+          if ($LASTEXITCODE -ne 0) { Write-Warning "ISL model nahi aaya (HF_TOKEN?) - DEMO build"; $global:LASTEXITCODE = 0 }
       - name: Lint
         run: uv run ruff check .
       - name: Tests (offscreen Qt)
@@ -29,6 +36,7 @@ jobs:
         run: |
           $p = Start-Process dist\SANKET\SANKET.exe -ArgumentList "--selftest" -Wait -PassThru -NoNewWindow
           Write-Host "self-test exit code $($p.ExitCode) (DEMO until trained models are committed)"
+          Get-Content "$env:LOCALAPPDATA\SANKET\sanket.log"
       - uses: actions/upload-artifact@v4
         with:
           name: SANKET-windows

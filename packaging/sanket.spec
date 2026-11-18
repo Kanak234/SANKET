@@ -25,7 +25,7 @@ if (ROOT / "third_party").exists():
     datas.append((str(ROOT / "third_party"), "third_party"))
 datas += collect_data_files("mediapipe")
 
-binaries = collect_dynamic_libs("vosk") + collect_dynamic_libs("onnxruntime") + collect_dynamic_libs("sounddevice")
+binaries = collect_dynamic_libs("mediapipe") + collect_dynamic_libs("vosk") + collect_dynamic_libs("onnxruntime") + collect_dynamic_libs("sounddevice")
 
 a = Analysis(  # noqa: F821
     [str(ROOT / "sanket" / "__main__.py")],
