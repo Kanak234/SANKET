@@ -6,6 +6,8 @@ on:
   push:
     branches: [main, 'fix/**']
   workflow_dispatch:
+env:
+  PYTHONUTF8: "1"  # Windows runner ka cp1252 console Hindi/arrow print par crash karta tha
 jobs:
   test-and-build:
     runs-on: windows-latest
